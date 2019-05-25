@@ -1,0 +1,477 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01//EN" "http://www.w3.org/TR/html4/strict.dtd">
+<title>Kickstars - Crowdfunding HTML5 template</title>
+	<!-- Framework CSS -->
+<link rel="stylesheet" href="style.css" media="screen" />
+<link href="assets/src/prettify.css" type="text/css" rel="stylesheet" />
+    <script src="assets/src/prettify.js" type="text/javascript"></script>
+	<style type="text/css" media="screen">
+		p, table, hr, .box { margin-bottom:10px; }
+		.box p { margin-bottom:10px; }
+	</style>
+</head>
+<body>
+
+<div class="wrapper">
+
+	<h1 align="center">&ldquo;Kickstars - Crowdfunding HTML5 Template&rdquo;</h1>
+	<p class="subtitle">Created: 03/June/2013<br>
+					By: MegaDrupal<br>
+					Email: <a href="mailto:info@megadrupal.com">info@megadrupal.com</a><br>
+					Website: <a href="http://megadrupal.com">http://megadrupal.com</a><br>
+	<div class="separater"></div>
+		<h2 id="toc" class="alt">Table of Contents</h2>
+		<ol class="alpha">
+			<li><a href="#htmlStructure">HTML Structure</a>
+      		<ol>
+                	<li><a href="#normalpages">Normal Pages</a></li>
+                    <li><a href="#homepage">Home Pages</a></li>
+                    <li><a href="#slider">Slider</a></li>
+                </ol>
+      </li>
+			<li><a href="#cssFiles">CSS Files and Structure</a></li>
+			<li><a href="#javascript">JavaScript</a></li>
+			<li><a href="#credits">Sources and Credits</a></li>			
+		</ol>
+		<div class="separater"></div>
+</div>
+<div class="wrapper">
+<h3 id="htmlStructure"><strong>I) HTML Structure</strong> - <a href="#toc">top</a></h3>
+<p>Kickstar is a 960px fixed-width theme with indented and intuitively spaced HTML. You will find in-line commenting allthroughout the HTML so that you can always figure out what section of the layout you are in. The backbone of every page is as follows:</p>
+		<pre id="normalpages" class="prettyprint lines">
+&ltbody>
+
+&ltdiv id="wrapper">
+    &ltheader id="header">
+        &ltdiv class="wrap-top-menu">
+            &ltdiv class="container_12 clearfix">
+                &ltdiv class="grid_12">
+                    &ltnav class="top-menu">
+                        {MAIN MENU}
+                        &ltdiv id="right-menu">
+                            {RESPONSIVE MENU}
+                        &lt/div>
+                    &lt/nav>
+                    &ltdiv class="top-message clearfix">
+                        {TOP MESSAGES}
+                    &lt/div>
+                    &lti id="sys_btn_toggle_search" class="icon iBtnRed make-right">&lt/i>
+                &lt/div>
+            &lt/div>
+        &lt/div>&lt!-- end: .wrap-top-menu -->
+        &ltdiv class="container_12 clearfix">
+            &ltdiv class="grid_12 header-content">
+                &ltdiv id="sys_header_right" class="header-right">
+                    {SERCH FORM + REGISTER,LOGIN BUTTONS}
+                &lt/div>
+                &ltdiv class="header-left">
+                    {LOGO & HEADER LINKS}
+                &lt/div>
+            &lt/div>
+        &lt/div>
+    &lt/header>&lt!--end: #header -->
+
+    &ltdiv class="layout-2cols">
+        &ltdiv class="content grid_8">
+            {CONTENT}
+        &lt/div>&lt!--end: .content -->
+        &ltdiv class="sidebar grid_4">
+            {SIDEBAR}
+        &lt/div>&lt!--end: .sidebar -->
+        &ltdiv class="clear">&lt/div>
+    &lt/div>
+
+    &ltdiv class="additional-info-line">
+        &ltdiv class="container_12">
+            {TEXT & CALL TO ACTION BUTTON}
+        &lt/div>
+    &lt/div>&lt!--end: .additional-info-line -->
+    &ltfooter id="footer">
+        &ltdiv class="container_12 main-footer">
+            &ltdiv class="grid_3 about-us">
+                {ABOUT}
+            &lt/div>&lt!--end: .contact-info -->
+            &ltdiv class="grid_3 recent-tweets">
+                {RECENT TWEETS}
+            &lt/div>&lt!--end: .recent-tweets -->
+            &ltdiv class="clear clear-2col">&lt/div>
+            &ltdiv class="grid_3 email-newsletter">
+                {NEWSLETTER}
+            &lt/div>&lt!--end: .email-newsletter -->
+            &ltdiv class="grid_3">
+                {DISCOVER & CREATE}
+            &lt/div>
+            &ltdiv class="clear">&lt/div>
+        &lt/div>
+        &ltdiv class="copyright">
+            &ltdiv class="container_12">
+                {COPYRIGHT INFORMATION}
+            &lt/div>
+        &lt/div>
+    &lt/footer>&lt!--end: #footer -->
+
+&lt/div>
+
+&ltdiv class="popup-common" id="sys_popup_common">
+    &ltdiv class="overlay-bl-bg">&lt/div>
+    &ltdiv class="container_12 pop-content">
+        &ltdiv class="grid_12 wrap-btn-close ta-r">
+            &lti class="icon iBigX closePopup">&lt/i>
+        &lt/div>
+        &ltdiv class="grid_6 prefix_1">
+            &ltdiv class="form login-form">
+                {REGISTER FORM}
+            &lt/div>
+        &lt/div>
+        &ltdiv class="grid_4">
+            &ltdiv class="form login-form">
+                {LOGIN FORM}
+            &lt/div>
+        &lt/div>
+        &ltdiv class="clear">&lt/div>
+    &lt/div>
+&lt/div>
+
+&lt/body>
+		</pre>	
+        <div class="separater"></div>
+
+<h6 id="homepage">Home page</h6>
+		<p>Homepage is a bit different, but the same grid. Here is the general structure.<p/>
+		<pre class="prettyprint lines">  
+&ltbody>
+
+&ltdiv id="wrapper">
+    &ltheader id="header">
+        &ltdiv class="wrap-top-menu">
+            &ltdiv class="container_12 clearfix">
+                &ltdiv class="grid_12">
+                    &ltnav class="top-menu">
+                        {MAIN MENU}
+                        &ltdiv id="right-menu">
+                            {RESPONSIVE MENU}
+                        &lt/div>
+                    &lt/nav>
+                    &ltdiv class="top-message clearfix">
+                        {TOP MESSAGES}
+                    &lt/div>
+                    &lti id="sys_btn_toggle_search" class="icon iBtnRed make-right">&lt/i>
+                &lt/div>
+            &lt/div>
+        &lt/div>&lt!-- end: .wrap-top-menu -->
+        &ltdiv class="container_12 clearfix">
+            &ltdiv class="grid_12 header-content">
+                &ltdiv id="sys_header_right" class="header-right">
+                    {SERCH FORM + REGISTER,LOGIN BUTTONS}
+                &lt/div>
+                &ltdiv class="header-left">
+                    {LOGO & HEADER LINKS}
+                &lt/div>
+            &lt/div>
+        &lt/div>
+    &lt/header>&lt!--end: #header -->
+
+    &ltdiv id="home-slider">
+		{HOMEPAGE SLIDER}
+	&lt/div>
+	
+	&ltdiv class="home-feature-category">
+        &ltdiv class="container_12 clearfix">
+            &ltdiv class="grid_4 left-lst-category">
+                {CATEGORIES LIST}
+            &lt/div>
+            &ltdiv class="grid_8 marked-category">
+                {STAFF PICK PROJECT}
+            &lt/div>
+            &ltdiv class="clear">&lt/div>
+        &lt/div>
+    &lt/div>
+    &ltdiv class="home-popular-project">
+        &ltdiv class="container_12">
+            {POPULAR PROJECTS}
+        &lt/div>
+    &lt/div>
+    &ltdiv class="home-discover-friends">
+        &ltdiv class="container_12">
+            {DISCOVER FRIENDS}
+        &lt/div>
+    &lt/div>
+
+    &ltdiv class="additional-info-line">
+        &ltdiv class="container_12">
+            {TEXT & CALL TO ACTION BUTTON}
+        &lt/div>
+    &lt/div>&lt!--end: .additional-info-line -->
+    &ltfooter id="footer">
+        &ltdiv class="container_12 main-footer">
+            &ltdiv class="grid_3 about-us">
+                {ABOUT}
+            &lt/div>&lt!--end: .contact-info -->
+            &ltdiv class="grid_3 recent-tweets">
+                {RECENT TWEETS}
+            &lt/div>&lt!--end: .recent-tweets -->
+            &ltdiv class="clear clear-2col">&lt/div>
+            &ltdiv class="grid_3 email-newsletter">
+                {NEWSLETTER}
+            &lt/div>&lt!--end: .email-newsletter -->
+            &ltdiv class="grid_3">
+                {DISCOVER & CREATE}
+            &lt/div>
+            &ltdiv class="clear">&lt/div>
+        &lt/div>
+        &ltdiv class="copyright">
+            &ltdiv class="container_12">
+                {COPYRIGHT INFORMATION}
+            &lt/div>
+        &lt/div>
+    &lt/footer>&lt!--end: #footer -->
+
+&lt/div>
+
+&ltdiv class="popup-common" id="sys_popup_common">
+    &ltdiv class="overlay-bl-bg">&lt/div>
+    &ltdiv class="container_12 pop-content">
+        &ltdiv class="grid_12 wrap-btn-close ta-r">
+            &lti class="icon iBigX closePopup">&lt/i>
+        &lt/div>
+        &ltdiv class="grid_6 prefix_1">
+            &ltdiv class="form login-form">
+                {REGISTER FORM}
+            &lt/div>
+        &lt/div>
+        &ltdiv class="grid_4">
+            &ltdiv class="form login-form">
+                {LOGIN FORM}
+            &lt/div>
+        &lt/div>
+        &ltdiv class="clear">&lt/div>
+    &lt/div>
+&lt/div>
+
+&lt/body>
+		</pre>		
+        <div class="separater"></div>
+        <h5 id="slider">Top slider</h5>
+		<p>This template uses Mega Slider for homepage slider. Here is the general structure</p>
+		<pre class="prettyprint lines">
+&ltdiv class="md-slide-items md-slider" id="md-slider-1" data-thumb-width="105" data-thumb-height="70">
+	&ltdiv class="md-slide-item slide-0" data-timeout="6000">
+		&ltdiv class="md-mainimg">{SLIDE BACKGROUND IMAGE}&lt/div>
+		&ltdiv class="md-objects">
+			{SLIDE OBJECTS}
+		&lt/div>
+	&lt/div>
+	&ltdiv class="md-slide-item slide-1" data-timeout="6000">
+		&ltdiv class="md-mainimg">{SLIDE BACKGROUND IMAGE}&lt/div>
+		&ltdiv class="md-objects">
+			{SLIDE OBJECTS}
+		&lt/div>
+	&lt/div>
+&lt/div>
+		</pre>		
+		<p>We need to include <strong>animate.min.css</strong>, <strong>md_slider.css</strong>, <strong>md_slider.min.js</strong>, <strong>jquery.touchwipe.min.js</strong> plugin inside the page.</p>
+		<pre class="prettyprint lines">
+&ltlink rel="stylesheet" href="css/animate.min.css"/>
+&ltlink rel="stylesheet" href="css/md-slider.css"/>
+&ltscript type="text/javascript" src="js/jquery.touchwipe.min.js"&gt&lt/script&gt
+&ltscript type="text/javascript" src="js/md_slider.min.js"&gt&lt/script&gt
+		</pre>
+		<p>Use the following script in script.js to fire the plugin</p>
+		<pre class="prettyprint lines">
+if ($("#md-slider-1").length) {
+		$("#md-slider-1").mdSlider({
+			fullwidth: true,
+			transitions: "fade",
+			width: 980,
+			height: 365,
+			responsive: true,
+			slideShowDelay: 6000,
+			slideShow: true,
+			loop: true,
+			showLoading: false,
+			showArrow: 1,
+			showBullet: 1,
+			posBullet: 2,
+			showThumb: false,
+			enableDrag: true
+		});
+	}
+		</pre>		
+		<p>For more information about this plugin, you can views plugin source code (in js folder). This plugin is available as <a href="http://codecanyon.net/item/mega-slider-responsive-wordpress-slider-plugin/4673193?ref=megadrupal" target="_blank">WordPress plugin</a> and <a href="http://codecanyon.net/item/mega-slider/4313171?ref=megadrupal" target="_blank">Drupal module</a> too.</p>		
+
+</div><!--wrapper-->
+
+
+<div class="wrapper">
+<h3 id="cssFiles"><strong>II) CSS Files and Structure</strong> - <a href="#toc">top</a></h3>
+<p>This theme uses <strong>style.css</strong> file as main CSS file.</p>
+		<h6>style.css</h6>
+		<p>Main CSS files in this theme is style.css that contains all of specific stylings for the theme.The file is separated into 13 sections using labels as follows:</p> 
+
+<pre class="prettyprint lines">		
+1.	Reset
+2.	960 Grid System
+3.	Common css (Link, button, margin class, text align class...)
+4.	Layout extend
+5.	Navigation
+6.	Icons
+7.	Form
+8.	Project teaser
+9.	Header
+10.	Footer
+11.	Home page
+12.	Other pages
+</pre>
+<p>If you would like to edit a specific section of the site, simply find the appropriate label in the CSS file, and then scroll down until you find the appropriate style that needs to be edited.</p> 
+		<h6>responsive.css</h6> 
+		<p>responsive.css contains styling for media queries that allows us to tailor to different resolutions and devices without changing the content. The file is separated into sections as follows:</p>
+		<pre class="prettyprint lines">	
+@media screen and (max-device-width:  979px), screen and (max-width:  979px) {
+	
+{SOME CODES}
+
+}
+
+@media screen and (max-device-width:  767px), screen and (max-width:  767px) {
+	
+{SOME CODES}
+
+}
+
+@media screen and (max-device-width:  480px), screen and (max-width:  480px) {
+
+{SOME CODES}
+
+}
+
+@media screen and (max-device-width:  320px), screen and (max-width:  320px) {
+
+{SOME CODES}
+
+}
+   </pre>	
+   <p>If you would like to edit styling of the specific device width, simply find the appropriate label in the <strong>responsive.css</strong> file, and then scroll down until you find the appropriate style that needs to be edited.</p> 
+   
+		<h4>Additional css files</h4>
+		<ol>
+			<li><strong>animate.min</strong> - Animation library, from http://daneden.me/animate</li>
+            <li><strong>ie7.css</strong> - fix IE 7 problem</li>
+            <li><strong>ie8.css</strong> - fix IE 8 problem</li>
+            <li><strong>jquery.sidr.light.css</strong> - Sidr resonsive navigation</li>
+			<li><strong>md-slider.css</strong> - CSS for Homepage slider</li>
+            <li><strong>normalize.css</strong> - HTML5 reset</li>
+            <li><strong>responsive.css</strong> - Responsive CSS</li>
+			<li><strong>responsiveslides.css</strong> - Responsive slider for projects</li>
+		</ol>
+</div><!--wrapper-->
+<div class="wrapper">
+<h3 id="javascript"><strong>III) JavaScript</strong> - <a href="#toc">top</a></h3>
+<p>This theme imports following Javascript files.</p>
+		
+		<ol>
+    	<li><strong>html5.js</strong> - Javascript for IE 9</li>
+	<li><strong>jquery-1.9.1.min.js</strong> - Javascript library</li>
+	<li><strong>jquery-migrate-1.2.1.min.js</strong> - jQuery migrate (require by md_slider.js)</li>
+      <li><strong>md_slider.min.js</strong> - Homepage slider</li>
+	  <li><strong>jquery.touchwipe.min.js</strong> - Support touchwipe on homepage slider</li>
+      <li><strong>jquery.form.js</strong> - allows you to upgrade HTML forms to use AJAX</li>
+			<li><strong>jquery.validate.min.js</strong> - validate contact form and comment form</li>
+      <li><strong>jquery.sidr.min.js</strong> - Responsive navigation jQuery plugin</li>
+	  <li><strong>selectnav.min.js</strong> - Responsive navigation jQuery plugin</li>
+	  <li><strong>raphael-min.js</strong> - A small JavaScript library that should simplify your work with vector graphics on the web</li>
+      <li><strong>jquery.tweet.min.js</strong> - Tweet.js-Mod</li>
+      <li><strong>script.js</strong> - contains all custom script</li>
+	  <li><strong>pie.js</strong> - custom script to draw circle percentage</li>
+		</ol>
+		<p>Except <strong>script.js</strong> and <strong>pie.js</strong>, all of the plugins are packed, so you don't need to manually edit anything in these files. The only necessary thing to know is how to call the method. You can refer to the website of the plugin author I listed in the <strong>"Sources and Credits"</strong> section  to learn more about them.</p>  
+		<p><strong>script.js</strong> contains custom scripts and scripts to call method for above plugin. The file is separated in to sections with appropriate label.</p>
+		<p>To configure Twitter, you need to change script.js file at line 37 and 40. You need to have a twitter App for your usage in order to obtain OAuth credentials, see <a href="https://dev.twitter.com/apps">https://dev.twitter.com/apps</a> for help.</p>
+  <pre class="prettyprint lines">	
+/* Homepage Slider
+---------------------------------------------------------- */		
+
+{SOME CODES}
+
+/* get Twitter
+---------------------------------------------------------- */	
+
+{SOME CODES}
+
+/* Project Slider
+---------------------------------------------------------- */	
+
+{SOME CODES}
+
+/* Tabs
+---------------------------------------------------------- */	
+
+{SOME CODES}
+
+/* Accordion
+---------------------------------------------------------- */
+
+{SOME CODES}
+
+/* Open popup when click to: Register, Login
+---------------------------------------------------------- */
+
+{SOME CODES}
+
+/* Loadmore button on Category
+---------------------------------------------------------- */
+
+{SOME CODES}
+
+/* Loadmore button on blog
+---------------------------------------------------------- */
+
+{SOME CODES}
+
+/* Loadmore button on search results
+---------------------------------------------------------- */
+
+{SOME CODES}
+
+/* Contact form: Ajax & Validate
+---------------------------------------------------------- */	
+
+{SOME CODES}
+
+/* Responsive
+---------------------------------------------------------- */
+
+{SOME CODES}
+
+/* Navigation on mobile (Sidr)
+---------------------------------------------------------- */
+
+{SOME CODES}
+
+        </pre>		
+</div><!--wrapper-->
+<div class="wrapper">
+	<h3 id="credits"><strong>IV) Sources and Credits</strong> - <a href="#toc">top</a></h3>
+	<p>I've used the following images, icons, js, css files as listed.</p>
+	<ul>
+		<li><a target="_blank" href="http://www.jquery.com">jQuery</a></li>		
+		<li><a href="http://bassistance.de/jquery-plugins/jquery-plugin-validation/" target="_blank">form validator</a></li>
+        <li><a href="http://malsup.com/jquery/form/" target="_blank">jquery form</a></li>
+		<li><a href="http://www.netcu.de/jquery-touchwipe-iphone-ipad-library" target="_blank">jQuery Touchwipe</a></li>
+		<li><a href="http://responsiveslides.com" target="_blank">Responsive Slides</a></li>
+        <li><a href="http://codecanyon.net/item/mega-slider-responsive-wordpress-slider-plugin/4673193?ref=megadrupal" target="_blank">Mega Slider (Front javascript only)</a></li>
+        <li><a href="http://www.berriart.com/sidr/" target="_blank">Sidr</a></li>
+		<li><a href="https://github.com/lukaszfiszer/selectnav.js" target="_blank">Select Nav</a></li>
+       <li><a href="https://github.com/StanScates/Tweet.js-Mod" target="_blank">Tweet.js-Mod</a></li>
+        <li><a href="http://necolas.github.io/normalize.css/" target="_blank">Normalize.css</a></li>
+	</ul>
+</div>
+<div class="wrapper">
+	<p>Thank you so much for purchasing this theme. If you have any question relating to the themes please post your question to support forum <a href="http://wpprime.com/forum">http://wpprime.com/forum</a></p> 
+	<p class="append-bottom alt large"><strong>MegaDrupal</strong><br>
+    Email: <a href="mailto:info@megadrupal.com">info@megadrupal.com</a><br>
+	Website: <a href="http://megadrupal.com">http://megadrupal.com</a><br>
+	<p><a href="#toc">Go To Table of Contents</a></p>
+</div>
+</body>
+<script type="text/javascript" src="assets/prettify/prettify.js"></script>
+	<script> prettyPrint(); </script>
+</html>
