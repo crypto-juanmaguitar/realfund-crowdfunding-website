@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html>
 <head>
-    <title>Contact Us | Real Fund</title>
+    <title>All pages | Real Fund</title>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale = 1.0, maximum-scale=1.0, user-scalable=no" />
     <link href='http://fonts.googleapis.com/css?family=Open+Sans:400,600,700,300' rel='stylesheet' type='text/css'>
@@ -19,16 +19,14 @@
     <script type="text/javascript" src="js/html5.js"></script>
     <![endif]-->
     <script type="text/javascript" src="js/jquery-1.9.1.min.js"></script>
-    <script type="text/javascript" src="js/jquery.form.js"></script>
-	<script type="text/javascript" src="js/jquery.validate.min.js"></script>
-	<script type="text/javascript" src="js/jquery.sidr.min.js"></script>
+    <script type="text/javascript" src="js/jquery.sidr.min.js"></script>
     <script type="text/javascript" src="js/jquery.tweet.min.js"></script>
     <script type="text/javascript" src="js/script.js"></script>
 
 </head>
 <body>
 <div id="wrapper">
-<header id="header">
+    <header id="header">
         <div class="wrap-top-menu">
             <div class="container_12 clearfix">
                 <div class="grid_12">
@@ -36,11 +34,11 @@
                         <ul id="main-menu" class="nav nav-horizontal clearfix">
                             <li class="active"><a href="index.html">Home</a></li>
                             <li class="sep"></li>
-                            <li><a href="all-pages.html">All Pages</a></li>
+                            <li><a href="all-pages.php">All Pages</a></li>
                             <li class="sep"></li>
-                            <li><a href="how-it-work.html">Help</a></li>
+                            <li><a href="how-it-work.php">Help</a></li>
                             <li class="sep"></li>
-                            <li><a href="contact.html">Contact</a></li>
+                            <li><a href="contact.php">Contact</a></li>
                         </ul>
                         <a id="btn-toogle-menu" class="btn-toogle-menu" href="#alternate-menu">
                             <span class="line-bar"></span>
@@ -50,9 +48,9 @@
                         <div id="right-menu">
                             <ul class="alternate-menu">
                                 <li><a href="index.html">Home</a></li>
-                                <li><a href="all-pages.html">All Pages</a></li>
-                                <li><a href="how-it-work.html">Help</a></li>
-                                <li><a href="contact.html">Contact us</a></li>
+                                <li><a href="all-pages.php">About</a></li>
+                                <li><a href="how-it-work.php">Help</a></li>
+                                <li><a href="contact.php">Contact us</a></li>
                             </ul>
                         </div>
                     </nav>
@@ -106,124 +104,110 @@
     <div class="layout-2cols">
         <div class="content grid_8">
             <div class="single-page">
-                <div class="wrapper-box box-post-comment">
-                    <h2 class="common-title">Contact Us</h2>
-                    <div class="box-white">
-                        <form id="contact-form" class="clearfix" action="processForm.php" method="post">
-                             <p class="rs pb30">Pellentesque laoreet sapien id lacus luctus non fringilla elit lobortis. Fusce augue diam, tempor posuere pharetra sed, feugiat non sapien.</p>
-                            <div class="form form-post-comment">
-                                <div class="left-input">
-                                    <label for="txt_name_contact">
-                                        <input id="txt_name_contact" type="text" name="name" class="txt fill-width txt-name" placeholder="Enter Your Name"/>
-                                    </label>
-                                    <label for="txt_email_contact">
-                                        <input id="txt_email_contact" type="email" name="email" class="txt fill-width txt-email" placeholder="Enter Your Email" value="info@megadrupal.com"/>
-                                    </label>
-                                </div>
-                                <div class="right-input">
-                                    <label for="txt_content_contact">
-                                        <textarea name="message" id="txt_content_contact" cols="30" rows="10" class="txt fill-width" placeholder="Your message"></textarea>
-                                    </label>
-                                </div>
-                                <div class="clear"></div>
-                                <p class="rs ta-r clearfix">
-									<span id="response"></span>
-                                   
-                                   <input type="submit" class="btn btn-white btn-submit-comment" value="Send">
-                               </p>
+                <h2 class="rs single-title">All HTML Pages</h2>
+                <div class="box-single-content">
+                    <div class="editor-content">
+                        <ul style="list-style: decimal">
+							<li><a target="_blank" href="index.html">Home</a></li>
+							<li><a target="_blank" href="project.html">Project</a></li>
+							<li><a target="_blank" href="search-results.html">Search result</a></li>
+							<li><a target="_blank" href="single.html">Single</a></li>
+							<li><a target="_blank" href="single-search-dropdown.html">Single dropdown search</a></li>
+							<li><a target="_blank" href="how-it-work.php">How it work</a></li>
+							<li><a target="_blank" href="profile.html">Profile</a></li>
+							<li><a target="_blank" href="blog.html">Blog</a></li>
+							<li><a target="_blank" href="category.html">Category</a></li>
+							<li><a target="_blank" href="post.html">Post</a></li>
+							<li><a target="_blank" href="day-news.html">Day news</a></li>
+							<li><a target="_blank" href="contact.php">Contact</a></li>
+						</ul>
+                        <!-- AddThis Button BEGIN -->
+                        <div class="social-sharing">
+                            <div class="addthis_toolbox addthis_default_style">
+                            <a class="addthis_button_facebook_like" fb:like:layout="button_count"></a>
+                            <a class="addthis_button_tweet"></a>
+                            <a class="addthis_button_google_plusone" g:plusone:size="medium"></a>
+                            <a class="addthis_counter addthis_pill_style"></a>
                             </div>
-                        </form>
+                            <script type="text/javascript" src="//s7.addthis.com/js/300/addthis_widget.js#pubid=undefined"></script>
+                        </div><!-- AddThis Button END -->
                     </div>
-                </div><!--end: .box-list-comment -->
+                </div>
             </div>
         </div><!--end: .content -->
         <div class="sidebar grid_4">
             <div class="box-gray">
-                <h3 class="title-box">Contact info</h3>
+                <h3 class="title-box">Sections</h3>
                 <p class="rs description pb20">Pellentesque laoreet sapien id lacus luctus non fringilla elit lobortis. Fusce augue diam, tempor posuere pharetra sed, feugiat non sapien.</p>
-                <p class="rs pb20">
-                    <span class="fw-b">Address</span>: 111 lorem St. 5th Floor,
-                    Ipsum City, MA 00001
-                </p>
-                <p class="rs pb20">
-                    <span class="fw-b">Phone</span>: +1 (555) 55-55-555
-                    (9AM - 6PM EST)
-                </p>
-                <p class="rs pb20">
-                    <span class="fw-b">Email</span>: <a href="mailto:info@megadrupal.com" class="be-fc-orange">info@megadrupal.com</a>
-                </p>
+                <ul class="rs nav nav-category">
+                    <li>
+                        <a href="#">
+                            About
+                            <i class="icon iPlugGray"></i>
+                        </a>
+                    </li>
+                    <li class="active">
+                        <a href="#">
+                            How It Works
+                            <i class="icon iPlugGray"></i>
+                        </a>
+                    </li>
+                    <li>
+                        <a href="#">
+                            Membership
+                            <i class="icon iPlugGray"></i>
+                        </a>
+                    </li>
+                    <li>
+                        <a href="#">
+                            Success Stories
+                            <i class="icon iPlugGray"></i>
+                        </a>
+                    </li>
+                    <li>
+                        <a href="#">
+                            Press
+                            <i class="icon iPlugGray"></i>
+                        </a>
+                    </li>
+                    <li>
+                        <a href="#">
+                            Games
+                            <i class="icon iPlugGray"></i>
+                        </a>
+                    </li>
+                    <li>
+                        <a href="#">
+                            Stats
+                            <i class="icon iPlugGray"></i>
+                        </a>
+                    </li>
+                </ul>
+            </div>
+            <div class="box-gray">
+                <h3 class="title-box">Text Widget</h3>
+                <p class="rs description pb20">Nam sollicitudin malesuada dapibus. Suspendisse mollis pellentesque eros. Aenean congue tempor neque, vel malesuada augue auctor in. In aliquam faucibus interdum.</p>
+                <a class="btn bigger fill-width btn-white" href="#">Large download button</a>
+                <a class="btn bigger fill-width btn-blue" href="#">Large download button</a>
+
             </div>
         </div><!--end: .sidebar -->
         <div class="clear"></div>
     </div>
-    <footer id="footer">
-        <div class="container_12 main-footer">
-            <div class="grid_3 about-us">
-                <h3 class="rs title">About</h3>
-                <p class="rs description">Donec rutrum elit ac arcu bibendum rhoncus in vitae turpis. Quisque fermentum gravida eros non faucibus. Curabitur fermentum, arcu sed cursus commodo.</p>
-                <p class="rs email"><a class="fc-default  be-fc-orange" href="mailto:info@megadrupal.com">info@megadrupal.com</a></p>
-                <p class="rs">+1 (555) 555 - 55 - 55</p>
-            </div><!--end: .contact-info -->
-            <div class="grid_3 recent-tweets">
-                <h3 class="rs title">Recent Tweets</h3>
-                <div class="lst-tweets" id="sys_lst_tweets">
-                    
-                </div>
-            </div><!--end: .recent-tweets -->
-            <div class="clear clear-2col"></div>
-            <div class="grid_3 email-newsletter">
-                <h3 class="rs title">Newsletter Signup</h3>
-                <div class="inner">
-                    <p class="rs description">Nam aliquet, velit quis consequat interdum, odio dolor elementum.</p>
-                    <form action="#">
-                        <div class="form form-email">
-                            <label class="lbl" for="txt-email">
-                                <input id="txt-email" type="text" class="txt fill-width" placeholder="Enter your e-mail address"/>
-                            </label>
-                            <button class="btn btn-green" type="submit">Submit</button>
-                        </div>
-                    </form>
-                </div>
-            </div><!--end: .email-newsletter -->
-            <div class="grid_3">
-                <h3 class="rs title">Discover &amp; Create</h3>
-                <div class="footer-menu">
-                    <ul class="rs">
-                        <li><a class="be-fc-orange" href="#">What is Real Fund</a></li>
-                        <li><a class="be-fc-orange" href="#">Start a project</a></li>
-                        <li><a class="be-fc-orange" href="#">Project Guidlines</a></li>
-                        <li><a class="be-fc-orange" href="#">Press</a></li>
-                        <li><a class="be-fc-orange" href="#">Stats</a></li>
-                    </ul>
-                    <ul class="rs">
-                        <li><a class="be-fc-orange" href="#">Staff Picks</a></li>
-                        <li><a class="be-fc-orange" href="#">Popular</a></li>
-                        <li><a class="be-fc-orange" href="#">Recent</a></li>
-                        <li><a class="be-fc-orange" href="#">Small Projects</a></li>
-                        <li><a class="be-fc-orange" href="#">Most Funded</a></li>
-                    </ul>
-                    <div class="clear"></div>
-                </div>
+
+    <div class="additional-info-line">
+        <div class="container_12">
+            <div class="grid_9">
+                <h2 class="rs title">Vestibulum tristique, purus eget euismod vulputate, nisl erat suscipit mi!</h2>
+                <p class="rs description">Duis placerat malesuada sapien, eu consequat mauris vestibulum vitae. Aliquam fermentum lorem ut leo ultricies semper. In sed ligula massa, vitae elementum mauris.</p>
+            </div>
+            <div class="grid_3 ta-r">
+                <a class="btn bigger btn-red" href="#">Learn more</a>
             </div>
             <div class="clear"></div>
         </div>
-        <div class="copyright">
-            <div class="container_12">
-                <div class="grid_12">
-                    <a class="logo-footer" href="index.html"><img src="images/logo-2.png" alt="$SITE_NAME"/></a>
-                    <p class="rs term-privacy">
-                        <a class="fw-b be-fc-orange" href="single.html">Terms & Conditions</a>
-                        <span class="sep">/</span>
-                        <a class="fw-b be-fc-orange" href="single.html">Privacy Policy</a>
-                        <span class="sep">/</span>
-                        <a class="fw-b be-fc-orange" href="#">FAQ</a>
-                    </p>
-                    <p class="rs ta-c fc-gray-dark site-copyright">HTML by <a href="http://megadrupal.com" title="Drupal Developers" target="_blank">MegaDrupal</a>. Designed by <a href="http://bestwebsoft.com/" title="Web development company" target="_blank">BestWebSoft</a>.</p>
-                </div>
-                <div class="clear"></div>
-            </div>
-        </div>
-    </footer><!--end: #footer -->
+    </div><!--end: .additional-info-line -->
+<?php include("footer.php"); ?>
 
 </div>
 
