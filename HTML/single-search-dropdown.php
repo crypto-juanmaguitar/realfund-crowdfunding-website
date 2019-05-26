@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html>
 <head>
-    <title>Day news | Real Fund</title>
+    <title>Single dropdown search | Real Fund</title>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale = 1.0, maximum-scale=1.0, user-scalable=no" />
     <link href='http://fonts.googleapis.com/css?family=Open+Sans:400,600,700,300' rel='stylesheet' type='text/css'>
@@ -27,90 +27,105 @@
 <body>
 <div id="wrapper">
 <?php include_once("header.php"); ?>
-    <div class="day-news">
-        <div class="top-nav-news">
-            <div class="container_12">
-                <div class="grid_12">
-                    <h3 class="common-title">Newsletters  / <span class="fc-orange">05.11.2013</span></h3>
-                </div>
-                <div class="clear"></div>
-                <div class="nav-item grid_4">
-                    <h3 class="rs title"><a href="#" class="be-fc-orange fc-gray">Previous Day Theme</a></h3>
-                    <p class="rs time fc-gray">13.03.2013</p>
-                </div>
-                <div class="nav-item grid_4 ta-c">
-                    <h3 class="rs title"><a href="#" class="be-fc-orange fc-gray">Next Day Theme</a></h3>
-                    <p class="rs time fc-gray">13.03.2013</p>
-                </div>
-                <div class="nav-item grid_4 ta-r">
-                    <h3 class="rs title"><a href="#" class="be-fc-orange fc-gray">Next Day Theme</a></h3>
-                    <p class="rs time fc-gray">13.03.2013</p>
-                </div>
-                <div class="clear"></div>
-            </div>
-        </div>
-        <div class="layout-1cols-ceneter">
-            <div class="content grid_8">
-                <div class="project-short">
-                    <div class="top-project-info">
-                        <div class="content-info-short clearfix">
-                            <a href="#" class="thumb-img">
-                                <img src="images/ex/th-292x204-2.jpg" alt="$TITLE">
-                            </a>
-                            <div class="wrap-short-detail">
-                                <h3 class="rs acticle-title"><a class="be-fc-orange" href="#">LYK and Bear #1: No Food Deed Unpunished</a></h3>
-                                <p class="rs tiny-desc">by <a href="#" class="fw-b fc-gray be-fc-orange">Ray Sumser</a> in <span class="fw-b fc-gray">New York, NY</span></p>
-                                <p class="rs title-description">Nam sit amet est sapien, a faucibus purus. Sed commodo facilisis tempus. Pellentesque placerat elementum adipiscing.</p>
+
+    <div class="layout-2cols">
+        <div class="content grid_8">
+            <div class="single-page">
+                <h2 class="rs single-title">Ineteresting article</h2>
+                <p class="rs post-by">by <a href="#">Jonh Doe</a></p>
+                <div class="box-single-content">
+                    <div class="editor-content">
+                        <p>
+                            <img class="img-desc" src="images/ex/th-552x152-1.jpg" alt="$DESCRIPTION">
+                        </p>
+                        <p>Nam sit amet est sapien, a faucibus purus. Sed commodo facilisis tempus. <span class="fc-orange">Pellentesque placerat elementum adipiscing.</span> Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Aenean commodo ligula eget dolor. Aenean massa. Cum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Donec quam felis, ultricies nec, pellentesque eu, pretium quis, sem. Nulla consequat massa quis enim. Donec pede justo, fringilla vel, aliquet nec, vulputate eget, arcu.</p>
+                        <p>Etiam quis libero odio. Donec laoreet diam sed arcu vehicula consequat. Proin faucibus pretium consequat. <span class="fw-b fc-black">Aliquam vulputate aliquet nisl</span>, a sagittis ipsum ultrices a. Nunc risus tellus, vulputate eget lobortis eget, facilisis et tortor. Cum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. </p>
+                        <!-- AddThis Button BEGIN -->
+                        <div class="social-sharing">
+                            <div class="addthis_toolbox addthis_default_style">
+                            <a class="addthis_button_facebook_like" fb:like:layout="button_count"></a>
+                            <a class="addthis_button_tweet"></a>
+                            <a class="addthis_button_google_plusone" g:plusone:size="medium"></a>
+                            <a class="addthis_counter addthis_pill_style"></a>
                             </div>
-                            <p class="rs clearfix comment-view">
-                                <a href="#" class="fc-gray be-fc-orange">75 comments</a>
-                                <span class="sep">|</span>
-                                <a href="#" class="fc-gray be-fc-orange">378 views</a>
-                            </p>
-                        </div>
-                    </div><!--end: .top-project-info -->
-                </div>
-                <div class="project-short">
-                    <div class="top-project-info">
-                        <div class="content-info-short clearfix">
-                            <a href="#" class="thumb-img">
-                                <img src="images/ex/th-292x204-1.jpg" alt="$TITLE">
-                            </a>
-                            <div class="wrap-short-detail">
-                                <h3 class="rs acticle-title"><a class="be-fc-orange" href="#">LYK and Bear #1: No Food Deed Unpunished</a></h3>
-                                <p class="rs tiny-desc">by <a href="#" class="fw-b fc-gray be-fc-orange">Ray Sumser</a> in <span class="fw-b fc-gray">New York, NY</span></p>
-                                <p class="rs title-description">Nam sit amet est sapien, a faucibus purus. Sed commodo facilisis tempus. Pellentesque placerat elementum adipiscing.</p>
-                            </div>
-                            <p class="rs clearfix comment-view">
-                                <a href="#" class="fc-gray be-fc-orange">75 comments</a>
-                                <span class="sep">|</span>
-                                <a href="#" class="fc-gray be-fc-orange">378 views</a>
-                            </p>
-                        </div>
-                    </div><!--end: .top-project-info -->
-                </div>
-                <div class="project-short">
-                    <div class="top-project-info">
-                        <div class="content-info-short clearfix">
-                            <a href="#" class="thumb-img">
-                                <img src="images/ex/th-292x204-3.jpg" alt="$TITLE">
-                            </a>
-                            <div class="wrap-short-detail">
-                                <h3 class="rs acticle-title"><a class="be-fc-orange" href="#">LYK and Bear #1: No Food Deed Unpunished</a></h3>
-                                <p class="rs tiny-desc">by <a href="#" class="fw-b fc-gray be-fc-orange">Ray Sumser</a> in <span class="fw-b fc-gray">New York, NY</span></p>
-                                <p class="rs title-description">Nam sit amet est sapien, a faucibus purus. Sed commodo facilisis tempus. Pellentesque placerat elementum adipiscing.</p>
-                            </div>
-                            <p class="rs clearfix comment-view">
-                                <a href="#" class="fc-gray be-fc-orange">75 comments</a>
-                                <span class="sep">|</span>
-                                <a href="#" class="fc-gray be-fc-orange">378 views</a>
-                            </p>
-                        </div>
-                    </div><!--end: .top-project-info -->
+                            <script type="text/javascript" src="//s7.addthis.com/js/300/addthis_widget.js#pubid=undefined"></script>
+                        </div><!-- AddThis Button END -->
+                    </div>
                 </div>
             </div>
-        </div>
+        </div><!--end: .content -->
+        <div class="sidebar grid_4">
+            <div class="box-gray">
+                <h3 class="title-box">Sections</h3>
+                <p class="rs description pb20">Pellentesque laoreet sapien id lacus luctus non fringilla elit lobortis. Fusce augue diam, tempor posuere pharetra sed, feugiat non sapien.</p>
+                <ul class="rs nav nav-category">
+                    <li>
+                        <a href="#">
+                            About
+                            <i class="icon iPlugGray"></i>
+                        </a>
+                    </li>
+                    <li class="active">
+                        <a href="#">
+                            How It Works
+                            <i class="icon iPlugGray"></i>
+                        </a>
+                    </li>
+                    <li>
+                        <a href="#">
+                            Membership
+                            <i class="icon iPlugGray"></i>
+                        </a>
+                    </li>
+                    <li>
+                        <a href="#">
+                            Success Stories
+                            <i class="icon iPlugGray"></i>
+                        </a>
+                    </li>
+                    <li>
+                        <a href="#">
+                            Press
+                            <i class="icon iPlugGray"></i>
+                        </a>
+                    </li>
+                    <li>
+                        <a href="#">
+                            Games
+                            <i class="icon iPlugGray"></i>
+                        </a>
+                    </li>
+                    <li>
+                        <a href="#">
+                            Stats
+                            <i class="icon iPlugGray"></i>
+                        </a>
+                    </li>
+                </ul>
+            </div>
+            <div class="box-gray">
+                <h3 class="title-box">Text Widget</h3>
+                <p class="rs description pb20">Nam sollicitudin malesuada dapibus. Suspendisse mollis pellentesque eros. Aenean congue tempor neque, vel malesuada augue auctor in. In aliquam faucibus interdum.</p>
+                <a class="btn bigger fill-width btn-white" href="#">Large download button</a>
+                <a class="btn bigger fill-width btn-blue" href="#">Large download button</a>
+
+            </div>
+        </div><!--end: .sidebar -->
+        <div class="clear"></div>
     </div>
+
+    <div class="additional-info-line">
+        <div class="container_12">
+            <div class="grid_9">
+                <h2 class="rs title">Vestibulum tristique, purus eget euismod vulputate, nisl erat suscipit mi!</h2>
+                <p class="rs description">Duis placerat malesuada sapien, eu consequat mauris vestibulum vitae. Aliquam fermentum lorem ut leo ultricies semper. In sed ligula massa, vitae elementum mauris.</p>
+            </div>
+            <div class="grid_3 ta-r">
+                <a class="btn bigger btn-red" href="#">Learn more</a>
+            </div>
+            <div class="clear"></div>
+        </div>
+    </div><!--end: .additional-info-line -->
     <?php include_once("footer.php"); ?>
 
 </div>

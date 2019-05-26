@@ -26,7 +26,7 @@
 </head>
 <body>
 <div id="wrapper">
-<?php include("header.php"); ?>
+<?php include_once("header.php"); ?>
 
     <div class="layout-2cols">
         <div class="content grid_8">
@@ -37,14 +37,14 @@
                         <ul style="list-style: decimal">
 							<li><a target="_blank" href="index.html">Home</a></li>
 							<li><a target="_blank" href="project.html">Project</a></li>
-							<li><a target="_blank" href="search-results.html">Search result</a></li>
-							<li><a target="_blank" href="single.html">Single</a></li>
-							<li><a target="_blank" href="single-search-dropdown.html">Single dropdown search</a></li>
+							<li><a target="_blank" href="search-results.php">Search result</a></li>
+							<li><a target="_blank" href="single.php">Single</a></li>
+							<li><a target="_blank" href="single-search-dropdown.php">Single dropdown search</a></li>
 							<li><a target="_blank" href="how-it-work.php">How it work</a></li>
-							<li><a target="_blank" href="profile.html">Profile</a></li>
+							<li><a target="_blank" href="profile.php">Profile</a></li>
 							<li><a target="_blank" href="blog.php">Blog</a></li>
 							<li><a target="_blank" href="category.php">Category</a></li>
-							<li><a target="_blank" href="post.html">Post</a></li>
+							<li><a target="_blank" href="post.php">Post</a></li>
 							<li><a target="_blank" href="day-news.php">Day news</a></li>
 							<li><a target="_blank" href="contact.php">Contact</a></li>
 						</ul>
@@ -134,7 +134,7 @@
             <div class="clear"></div>
         </div>
     </div><!--end: .additional-info-line -->
-<?php include("footer.php"); ?>
+<?php include_once("footer.php"); ?>
 
 </div>
 

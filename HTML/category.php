@@ -26,7 +26,7 @@
 </head>
 <body>
 <div id="wrapper">
-<?php include("header.php"); ?>
+<?php include_once("header.php"); ?>
 
     <div class="layout-2cols">
         <div class="content grid_9">
@@ -613,7 +613,7 @@
         </div><!--end: .sidebar -->
         <div class="clear"></div>
     </div>
-    <?php include("footer.php"); ?>
+    <?php include_once("footer.php"); ?>
 
 </div>
 
