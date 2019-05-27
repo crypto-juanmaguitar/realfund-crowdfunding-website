@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html>
 <head>
-    <title>Post | Kickstars</title>
+    <title>Post | Real Fund</title>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale = 1.0, maximum-scale=1.0, user-scalable=no" />
     <link href='http://fonts.googleapis.com/css?family=Open+Sans:400,600,700,300' rel='stylesheet' type='text/css'>
@@ -26,90 +26,17 @@
 </head>
 <body>
 <div id="wrapper">
-<header id="header">
-        <div class="wrap-top-menu">
-            <div class="container_12 clearfix">
-                <div class="grid_12">
-                    <nav class="top-menu">
-                        <ul id="main-menu" class="nav nav-horizontal clearfix">
-                            <li class="active"><a href="index.html">Home</a></li>
-                            <li class="sep"></li>
-                            <li><a href="all-pages.html">All Pages</a></li>
-                            <li class="sep"></li>
-                            <li><a href="how-it-work.html">Help</a></li>
-                            <li class="sep"></li>
-                            <li><a href="contact.html">Contact</a></li>
-                        </ul>
-                        <a id="btn-toogle-menu" class="btn-toogle-menu" href="#alternate-menu">
-                            <span class="line-bar"></span>
-                            <span class="line-bar"></span>
-                            <span class="line-bar"></span>
-                        </a>
-                        <div id="right-menu">
-                            <ul class="alternate-menu">
-                                <li><a href="index.html">Home</a></li>
-                                <li><a href="all-pages.html">All Pages</a></li>
-                                <li><a href="how-it-work.html">Help</a></li>
-                                <li><a href="contact.html">Contact us</a></li>
-                            </ul>
-                        </div>
-                    </nav>
-                    <div class="top-message clearfix">
-                        <i class="icon iFolder"></i>
-                        <span class="txt-message">Nulla egestas nulla ac diam ultricies id viverra nisi adipiscing.</span>
-                        <i class="icon iX"></i>
-                        <div class="clear"></div>
-                    </div>
-                    <i id="sys_btn_toggle_search" class="icon iBtnRed make-right"></i>
-                </div>
-            </div>
-        </div><!-- end: .wrap-top-menu -->
-        <div class="container_12 clearfix">
-            <div class="grid_12 header-content">
-                <div id="sys_header_right" class="header-right">
-                    <div class="account-panel">
-                        <a href="#" class="btn btn-red sys_show_popup_login">Register</a>
-                        <a href="#" class="btn btn-black sys_show_popup_login">Login</a>
-                    </div>
-                    <div class="form-search">
-                        <form action="#">
-                            <label for="sys_txt_keyword">
-                                <input id="sys_txt_keyword" class="txt-keyword" type="text" placeholder="Search projects"/>
-                            </label>
-                            <button class="btn-search" type="reset"><i class="icon iMagnifier"></i></button>
-                            <button class="btn-reset-keyword" type="reset"><i class="icon iXHover"></i></button>
-                        </form>
-                    </div>
-                </div>
-                <div class="header-left">
-                    <h1 id="logo">
-                        <a href="index.html"><img src="images/logo.png" alt="$SITE_NAME"/></a>
-                    </h1>
-                    <div class="main-nav clearfix">
-                        <div class="nav-item">
-                            <a href="#" class="nav-title">Discover</a>
-                            <p class="rs nav-description">Great Projects</p>
-                        </div>
-                        <span class="sep"></span>
-                        <div class="nav-item">
-                            <a href="#" class="nav-title">Start</a>
-                            <p class="rs nav-description">Your Project</p>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </header><!--end: #header -->
+<?php include_once("header.php"); ?>
 
     <div class="layout-2cols">
         <div class="grid_12 top-info">
-            <h2 class="common-title big rs"><span class="fc-black">Kickstars</span> Blog</h2>
+            <h2 class="common-title big rs"><span class="fc-black">Real Fund</span> Blog</h2>
         </div>
         <div class="content grid_8">
             <div class="single-page">
                 <div class="box-single-content">
                     <h3 class="rs single-title">Ineteresting article</h3>
-                    <p class="rs post-by">by <a href="profile.html">Jonh Doe</a></p>
+                    <p class="rs post-by">by <a href="profile.php">Jonh Doe</a></p>
                     <div class="editor-content">
                         <p>
                             <img class="img-desc" src="images/ex/th-552x152-1.jpg" alt="$DESCRIPTION">
@@ -149,7 +76,7 @@
                             </a>
                             <div class="media-body">
                                 <h4 class="rs comment-author">
-                                    <a href="profile.html" class="be-fc-orange fw-b">John Doe</a>
+                                    <a href="profile.php" class="be-fc-orange fw-b">John Doe</a>
                                     <span class="fc-gray">say:</span>
                                 </h4>
                                 <p class="rs comment-content"> Fusce tellus. Sed metus augue, convallis et, vehicula ut, pulvinar eu, ante. Integer orci tellus, tristique vitae, consequat nec, porta vel, lectus</p>
@@ -206,7 +133,7 @@
                             </a>
                             <div class="media-body">
                                 <h4 class="rs comment-author">
-                                    <a href="profile.html" class="be-fc-orange fw-b">Obama</a>
+                                    <a href="profile.php" class="be-fc-orange fw-b">Obama</a>
                                     <span class="fc-gray">say:</span>
                                 </h4>
                                 <p class="rs comment-content">Curabitur vel dolor ultrices ipsum dictum tristique. Praesent vitae lacus. Ut velit enim, vestibulum non, fermentum nec,</p>
@@ -225,7 +152,7 @@
                             </a>
                             <div class="media-body">
                                 <h4 class="rs comment-author">
-                                    <a href="profile.html" class="be-fc-orange fw-b">Mark Lenon</a>
+                                    <a href="profile.php" class="be-fc-orange fw-b">Mark Lenon</a>
                                     <span class="fc-gray">say:</span>
                                 </h4>
                                 <p class="rs comment-content">Nam nec sem ac risus congue varius. Maecenas interdum ipsum tempor ipsum fringilla eu vehicula urna vehicula.</p>
@@ -270,7 +197,7 @@
                                         <input id="txt_name_comment" type="text" class="txt fill-width txt-name" placeholder="Enter Your Name"/>
                                     </label>
                                     <label for="txt_email_comment">
-                                        <input id="txt_email_comment" type="text" class="txt fill-width txt-email" placeholder="Enter Your Email" value="info@megadrupal.com"/>
+                                        <input id="txt_email_comment" type="text" class="txt fill-width txt-email" placeholder="Enter Your Email" value="info@realfund.rocks"/>
                                     </label>
                                 </div>
                                 <div class="right-input">
@@ -293,18 +220,18 @@
             <div class="box-gray project-author">
                 <h3 class="title-box">Project by</h3>
                 <div class="media">
-                    <a href="profile.html" class="thumb-left">
+                    <a href="profile.php" class="thumb-left">
                         <img src="images/ex/th-90x90-1.jpg" alt="$USER_NAME"/>
                     </a>
                     <div class="media-body">
-                        <h4 class="rs pb10"><a href="profile.html" class="be-fc-orange fw-b">John Doe</a></h4>
+                        <h4 class="rs pb10"><a href="profile.php" class="be-fc-orange fw-b">John Doe</a></h4>
                         <p class="rs">Chicago, IL</p>
                         <p class="rs fc-gray">5 projects</p>
                     </div>
                 </div>
                 <div class="author-action">
-                    <a class="btn btn-red" href="profile.html">Contact me</a>
-                    <a class="btn btn-white" href="profile.html">See full bio</a>
+                    <a class="btn btn-red" href="profile.php">Contact me</a>
+                    <a class="btn btn-white" href="profile.php">See full bio</a>
                 </div>
             </div><!--end: .project-author -->
             <div class="box-gray">
@@ -318,74 +245,7 @@
         <div class="clear"></div>
     </div>
 
-    <footer id="footer">
-        <div class="container_12 main-footer">
-            <div class="grid_3 about-us">
-                <h3 class="rs title">About</h3>
-                <p class="rs description">Donec rutrum elit ac arcu bibendum rhoncus in vitae turpis. Quisque fermentum gravida eros non faucibus. Curabitur fermentum, arcu sed cursus commodo.</p>
-                <p class="rs email"><a class="fc-default  be-fc-orange" href="mailto:info@megadrupal.com">info@megadrupal.com</a></p>
-                <p class="rs">+1 (555) 555 - 55 - 55</p>
-            </div><!--end: .contact-info -->
-            <div class="grid_3 recent-tweets">
-                <h3 class="rs title">Recent Tweets</h3>
-                <div class="lst-tweets" id="sys_lst_tweets">
-                    
-                </div>
-            </div><!--end: .recent-tweets -->
-            <div class="clear clear-2col"></div>
-            <div class="grid_3 email-newsletter">
-                <h3 class="rs title">Newsletter Signup</h3>
-                <div class="inner">
-                    <p class="rs description">Nam aliquet, velit quis consequat interdum, odio dolor elementum.</p>
-                    <form action="#">
-                        <div class="form form-email">
-                            <label class="lbl" for="txt-email">
-                                <input id="txt-email" type="text" class="txt fill-width" placeholder="Enter your e-mail address"/>
-                            </label>
-                            <button class="btn btn-green" type="submit">Submit</button>
-                        </div>
-                    </form>
-                </div>
-            </div><!--end: .email-newsletter -->
-            <div class="grid_3">
-                <h3 class="rs title">Discover &amp; Create</h3>
-                <div class="footer-menu">
-                    <ul class="rs">
-                        <li><a class="be-fc-orange" href="#">What is Kickstars</a></li>
-                        <li><a class="be-fc-orange" href="#">Start a project</a></li>
-                        <li><a class="be-fc-orange" href="#">Project Guidlines</a></li>
-                        <li><a class="be-fc-orange" href="#">Press</a></li>
-                        <li><a class="be-fc-orange" href="#">Stats</a></li>
-                    </ul>
-                    <ul class="rs">
-                        <li><a class="be-fc-orange" href="#">Staff Picks</a></li>
-                        <li><a class="be-fc-orange" href="#">Popular</a></li>
-                        <li><a class="be-fc-orange" href="#">Recent</a></li>
-                        <li><a class="be-fc-orange" href="#">Small Projects</a></li>
-                        <li><a class="be-fc-orange" href="#">Most Funded</a></li>
-                    </ul>
-                    <div class="clear"></div>
-                </div>
-            </div>
-            <div class="clear"></div>
-        </div>
-        <div class="copyright">
-            <div class="container_12">
-                <div class="grid_12">
-                    <a class="logo-footer" href="index.html"><img src="images/logo-2.png" alt="$SITE_NAME"/></a>
-                    <p class="rs term-privacy">
-                        <a class="fw-b be-fc-orange" href="single.html">Terms & Conditions</a>
-                        <span class="sep">/</span>
-                        <a class="fw-b be-fc-orange" href="single.html">Privacy Policy</a>
-                        <span class="sep">/</span>
-                        <a class="fw-b be-fc-orange" href="#">FAQ</a>
-                    </p>
-                    <p class="rs ta-c fc-gray-dark site-copyright">HTML by <a href="http://megadrupal.com" title="Drupal Developers" target="_blank">MegaDrupal</a>. Designed by <a href="http://bestwebsoft.com/" title="Web development company" target="_blank">BestWebSoft</a>.</p>
-                </div>
-                <div class="clear"></div>
-            </div>
-        </div>
-    </footer><!--end: #footer -->
+    <?php include_once("footer.php"); ?>
 
 </div>
 
@@ -400,8 +260,8 @@
                 <form action="#">
                     <h3 class="rs title-form">Register</h3>
                     <div class="box-white">
-                        <h4 class="rs title-box">New to Kickstars?</h4>
-                        <p class="rs">A Kickstars account is required to continue.</p>
+                        <h4 class="rs title-box">New to Real Fund?</h4>
+                        <p class="rs">A Real Fund account is required to continue.</p>
                         <div class="form-action">
                             <label for="txt_name">
                                 <input id="txt_name" class="txt fill-width" type="text" placeholder="Enter full name"/>
