@@ -6,11 +6,12 @@
                         <ul id="main-menu" class="nav nav-horizontal clearfix">
                             <li class="active"><a href="index.html">Home</a></li>
                             <li class="sep"></li>
-                            <li><a href="all-pages.php">All Pages</a></li>
+                            <li><a href="all-pages.html">Todo el site</a></li>
                             <li class="sep"></li>
-                            <li><a href="how-it-work.php">Help</a></li>
+                            <li><a href="how-it-work.html">Ayuda</a></li>
                             <li class="sep"></li>
-                            <li><a href="contact.php">Contact</a></li>
+                            <li><a href="contact.html">Contacto</a></li>
+
                         </ul>
                         <a id="btn-toogle-menu" class="btn-toogle-menu" href="#alternate-menu">
                             <span class="line-bar"></span>
@@ -28,7 +29,7 @@
                     </nav>
                     <div class="top-message clearfix">
                         <i class="icon iFolder"></i>
-                        <span class="txt-message">Sigue nuestros perfiles en redes sociales</span>
+                        <span class="txt-message">Democratización y tokenización del Real Estate</span>
                         <i class="icon iX"></i>
                         <div class="clear"></div>
                     </div>
@@ -40,7 +41,7 @@
             <div class="grid_12 header-content">
                 <div id="sys_header_right" class="header-right">
                     <div class="account-panel">
-                        <a href="#" class="btn btn-red sys_show_popup_login">Register</a>
+                        <a href="#" class="btn btn-red sys_show_popup_login">Registro</a>
                         <a href="#" class="btn btn-black sys_show_popup_login">Login</a>
                     </div>
                     <div class="form-search">
@@ -59,13 +60,13 @@
                     </h1>
                     <div class="main-nav clearfix">
                         <div class="nav-item">
-                            <a href="#" class="nav-title">Discover</a>
-                            <p class="rs nav-description">Great Projects</p>
+                            <a href="#" class="nav-title">Invierte en</a>
+                            <p class="rs nav-description">Grandes oportunidades</p>
                         </div>
                         <span class="sep"></span>
                         <div class="nav-item">
-                            <a href="#" class="nav-title">Start</a>
-                            <p class="rs nav-description">Your Project</p>
+                            <a href="#" class="nav-title">Financia</a>
+                            <p class="rs nav-description">un nuevo proyecto</p>
                         </div>
                     </div>
                 </div>
