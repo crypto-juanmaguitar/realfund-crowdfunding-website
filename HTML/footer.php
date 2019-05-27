@@ -3,7 +3,7 @@
             <div class="grid_3 about-us">
                 <h3 class="rs title">About</h3>
                 <p class="rs description">Donec rutrum elit ac arcu bibendum rhoncus in vitae turpis. Quisque fermentum gravida eros non faucibus. Curabitur fermentum, arcu sed cursus commodo.</p>
-                <p class="rs email"><a class="fc-default  be-fc-orange" href="mailto:info@megadrupal.com">info@megadrupal.com</a></p>
+                <p class="rs email"><a class="fc-default  be-fc-orange" href="mailto:info@realfund.rocks">info@realfund.rocks</a></p>
                 <p class="rs">+1 (555) 555 - 55 - 55</p>
             </div><!--end: .contact-info -->
             <div class="grid_3 recent-tweets">
@@ -52,7 +52,7 @@
         <div class="copyright">
             <div class="container_12">
                 <div class="grid_12">
-                    <a class="logo-footer" href="index.html"><img src="images/logo-2.png" alt="$SITE_NAME"/></a>
+                    <a class="logo-footer" href="index.html"><img src="images/logo-2.png" alt="Real Fund"/></a>
                     <p class="rs term-privacy">
                         <a class="fw-b be-fc-orange" href="single.php">Terms & Conditions</a>
                         <span class="sep">/</span>
@@ -60,7 +60,7 @@
                         <span class="sep">/</span>
                         <a class="fw-b be-fc-orange" href="#">FAQ</a>
                     </p>
-                    <p class="rs ta-c fc-gray-dark site-copyright">HTML by <a href="http://megadrupal.com" title="Drupal Developers" target="_blank">MegaDrupal</a>. Designed by <a href="http://bestwebsoft.com/" title="Web development company" target="_blank">BestWebSoft</a>.</p>
+                    <p class="rs ta-c fc-gray-dark site-copyright">© <a href="http://realfund.rocks" title="Real Fund" target="_blank">RealFund</a> 2019.</p>
                 </div>
                 <div class="clear"></div>
             </div>

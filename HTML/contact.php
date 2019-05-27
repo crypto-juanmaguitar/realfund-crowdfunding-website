@@ -44,7 +44,7 @@
                                         <input id="txt_name_contact" type="text" name="name" class="txt fill-width txt-name" placeholder="Enter Your Name"/>
                                     </label>
                                     <label for="txt_email_contact">
-                                        <input id="txt_email_contact" type="email" name="email" class="txt fill-width txt-email" placeholder="Enter Your Email" value="info@megadrupal.com"/>
+                                        <input id="txt_email_contact" type="email" name="email" class="txt fill-width txt-email" placeholder="Enter Your Email" value="info@realfund.rocks"/>
                                     </label>
                                 </div>
                                 <div class="right-input">
@@ -77,7 +77,7 @@
                     (9AM - 6PM EST)
                 </p>
                 <p class="rs pb20">
-                    <span class="fw-b">Email</span>: <a href="mailto:info@megadrupal.com" class="be-fc-orange">info@megadrupal.com</a>
+                    <span class="fw-b">Email</span>: <a href="mailto:info@realfund.rocks" class="be-fc-orange">info@realfund.rocks</a>
                 </p>
             </div>
         </div><!--end: .sidebar -->

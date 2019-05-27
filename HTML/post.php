@@ -197,7 +197,7 @@
                                         <input id="txt_name_comment" type="text" class="txt fill-width txt-name" placeholder="Enter Your Name"/>
                                     </label>
                                     <label for="txt_email_comment">
-                                        <input id="txt_email_comment" type="text" class="txt fill-width txt-email" placeholder="Enter Your Email" value="info@megadrupal.com"/>
+                                        <input id="txt_email_comment" type="text" class="txt fill-width txt-email" placeholder="Enter Your Email" value="info@realfund.rocks"/>
                                     </label>
                                 </div>
                                 <div class="right-input">

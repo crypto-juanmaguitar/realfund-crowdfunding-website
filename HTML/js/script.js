@@ -1,8 +1,8 @@
 /*------------------------------------------------------------------------
 # KickStars - June 03, 2013
 # ------------------------------------------------------------------------
-# Designed by BestWebSoft & HTML by MegaDrupal
-# Websites:  http://www.megadrupal.com -  Email: info@megadrupal.com
+# Designed by BestWebSoft & HTML by RealFund
+# Websites:  http://www.realfund.rocks -  Email: info@realfund.rocks
 --------------------------------------------------------------------------*/
 
 $(function(){
@@ -37,7 +37,7 @@ $(function(){
 			modpath: '/twitter/',
 			count: 2,
 			loading_text: '<p class="rs ta-c fc-white">loading Twitter <br /><img src="images/ajax-loader.gif" alt="loading"/></p>',
-			username: 'megadrupal',
+			username: 'realfundtokens',
 			template: '<p class="rs tweet-mind">{text}</p><p class="rs timestamp">{time}</p><i class="icon iTwitter"></i>',
 	});
 	

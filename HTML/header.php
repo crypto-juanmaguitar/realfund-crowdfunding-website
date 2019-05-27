@@ -55,7 +55,7 @@
                 </div>
                 <div class="header-left">
                     <h1 id="logo">
-                        <a href="index.html"><img src="images/logo.png" alt="$SITE_NAME"/></a>
+                        <a href="index.html"><img src="images/logo.png" alt="Real Fund"/></a>
                     </h1>
                     <div class="main-nav clearfix">
                         <div class="nav-item">
