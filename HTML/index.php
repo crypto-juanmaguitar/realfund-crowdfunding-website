@@ -33,81 +33,7 @@
 </head>
 <body>
 <div id="wrapper">
-    <header id="header">
-        <div class="wrap-top-menu">
-            <div class="container_12 clearfix">
-                <div class="grid_12">
-                    <nav class="top-menu">
-                        <ul id="main-menu" class="nav nav-horizontal clearfix">
-                            <li class="active"><a href="index.html">Home</a></li>
-                            <li class="sep"></li>
-                            <li><a href="all-pages.php">Todo el site</a></li>
-                            <li class="sep"></li>
-                            <li><a href="how-it-work.php">Ayuda</a></li>
-                            <li class="sep"></li>
-                            <li><a href="contact.php">Contacto</a></li>
-
-                        </ul>
-                        <a id="btn-toogle-menu" class="btn-toogle-menu" href="#alternate-menu">
-                            <span class="line-bar"></span>
-                            <span class="line-bar"></span>
-                            <span class="line-bar"></span>
-                        </a>
-                        <div id="right-menu">
-                            <ul class="alternate-menu">
-                                <li><a href="index.html">Home</a></li>
-                                <li><a href="all-pages.php">Secciones</a></li>
-                                <li><a href="how-it-work.php">Ayuda</a></li>
-                                <li><a href="contact.php">Contacto</a></li>
-                            </ul>
-                        </div>
-                    </nav>
-                    <div class="top-message clearfix">
-                        <i class="icon iFolder"></i>
-                        <span class="txt-message">Democratización y tokenización del Real Estate</span>
-                        <i class="icon iX"></i>
-                        <div class="clear"></div>
-                    </div>
-                    <i id="sys_btn_toggle_search" class="icon iBtnRed make-right"></i>
-                </div>
-            </div>
-        </div><!-- end: .wrap-top-menu -->
-        <div class="container_12 clearfix">
-            <div class="grid_12 header-content">
-                <div id="sys_header_right" class="header-right">
-                    <div class="account-panel">
-                        <a href="#" class="btn btn-red sys_show_popup_login">Registro</a>
-                        <a href="#" class="btn btn-black sys_show_popup_login">Login</a>
-                    </div>
-                    <div class="form-search">
-                        <form action="#">
-                            <label for="sys_txt_keyword">
-                                <input id="sys_txt_keyword" class="txt-keyword" type="text" placeholder="Busca proyectos"/>
-                            </label>
-                            <button class="btn-search" type="reset"><i class="icon iMagnifier"></i></button>
-                            <button class="btn-reset-keyword" type="reset"><i class="icon iXHover"></i></button>
-                        </form>
-                    </div>
-                </div>
-                <div class="header-left">
-                    <h1 id="logo">
-                        <a href="index.html"><img src="images/logo.png" alt="Real Fund"/></a>
-                    </h1>
-                    <div class="main-nav clearfix">
-                        <div class="nav-item">
-                            <a href="#" class="nav-title">Invierte en</a>
-                            <p class="rs nav-description">Grandes oportunidades</p>
-                        </div>
-                        <span class="sep"></span>
-                        <div class="nav-item">
-                            <a href="#" class="nav-title">Financia</a>
-                            <p class="rs nav-description">un nuevo proyecto</p>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </header><!--end: #header -->
+<?php include_once("header.php"); ?>
     <div id="home-slider">
         <div class="md-slide-items md-slider" id="md-slider-1" data-thumb-width="105" data-thumb-height="70">
 			<div class="md-slide-item slide-0" data-timeout="6000">
@@ -471,86 +397,10 @@
         </div>
     </div><!--end: .home-discover-friends -->
 
-    <div class="additional-info-line">
-        <div class="container_12">
-            <div class="grid_9">
-                <h2 class="rs title">Vestibulum tristique, purus eget euismod vulputate, nisl erat suscipit mi!</h2>
-                <p class="rs description">Duis placerat malesuada sapien, eu consequat mauris vestibulum vitae. Aliquam fermentum lorem ut leo ultricies semper. In sed ligula massa, vitae elementum mauris.</p>
-            </div>
-            <div class="grid_3 ta-r">
-                <a class="btn bigger btn-red" href="#">Learn more</a>
-            </div>
-            <div class="clear"></div>
-        </div>
-    </div><!--end: .additional-info-line -->
-    <footer id="footer">
-        <div class="container_12 main-footer">
-            <div class="grid_3 about-us">
-                <h3 class="rs title">Sobre nosotros</h3>
-                <p class="rs description">Real Fund es la empresa líder en tokenización de activos inmobiliarios</p>
-                <p class="rs email"><a class="fc-default  be-fc-orange" href="mailto:info@realfund.rocks">info@realfund.rocks</a></p>
-                <p class="rs">+34 647734684</p>
-            </div><!--end: .contact-info -->
-            <div class="grid_3 recent-tweets">
-                <h3 class="rs title">Tweets Recientes</h3>
-                <div class="lst-tweets" id="sys_lst_tweets">
-
-                </div>
-            </div><!--end: .recent-tweets -->
-            <div class="clear clear-2col"></div>
-            <div class="grid_3 email-newsletter">
-                <h3 class="rs title">Suscríbete a nuestra Newsletter</h3>
-                <div class="inner">
-                    <p class="rs description">Te tendremos al día con las novedades en el mercado</p>
-                    <form action="#">
-                        <div class="form form-email">
-                            <label class="lbl" for="txt-email">
-                                <input id="txt-email" type="text" class="txt fill-width" placeholder="Enter your e-mail address"/>
-                            </label>
-                            <button class="btn btn-green" type="submit">Enviar</button>
-                        </div>
-                    </form>
-                </div>
-            </div><!--end: .email-newsletter -->
-            <div class="grid_3">
-                <h3 class="rs title">Descubre &amp; Crea</h3>
-                <div class="footer-menu">
-                    <ul class="rs">
-                        <li><a class="be-fc-orange" href="#">Qué es Real Fund</a></li>
-                        <li><a class="be-fc-orange" href="#">¿Tienes un proyecto?</a></li>
-                        <li><a class="be-fc-orange" href="#">Líneas maestras del proyecto</a></li>
-                        <li><a class="be-fc-orange" href="#">Prensa</a></li>
-                        <li><a class="be-fc-orange" href="#">Estadísticas</a></li>
-                    </ul>
-                    <ul class="rs">
-                        <li><a class="be-fc-orange" href="#">Selecciones</a></li>
-                        <li><a class="be-fc-orange" href="#">Popular</a></li>
-                        <li><a class="be-fc-orange" href="#">Reciente</a></li>
-                        <li><a class="be-fc-orange" href="#">Nuestras joyitas</a></li>
-                        <li><a class="be-fc-orange" href="#">Los más financiados</a></li>
-                    </ul>
-                    <div class="clear"></div>
-                </div>
-            </div>
-            <div class="clear"></div>
-        </div>
-        <div class="copyright">
-            <div class="container_12">
-                <div class="grid_12">
-                    <a class="logo-footer" href="index.html"><img src="images/logo-2.png" alt="Real Fund"/></a>
-                    <p class="rs term-privacy">
-                        <a class="fw-b be-fc-orange" href="single.php">Términos y Condiciones</a>
-                        <span class="sep">/</span>
-                        <a class="fw-b be-fc-orange" href="single.php">Política de privacidad</a>
-                        <span class="sep">/</span>
-                        <a class="fw-b be-fc-orange" href="#">FAQ</a>
-                    </p>
-                    <p class="rs ta-c fc-gray-dark site-copyright"><a href="http://realfund.rocks" title="Real Fund" target="_blank">Real Fund © 2019</a>.</p>
-                </div>
-                <div class="clear"></div>
-            </div>
-        </div>
-    </footer><!--end: #footer -->
+    <?php 
+    include_once("additional-info.php");
+    include_once("footer.php"); 
+    ?>
 
 </div>
 

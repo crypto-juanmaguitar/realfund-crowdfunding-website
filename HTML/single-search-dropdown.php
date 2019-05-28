@@ -126,7 +126,10 @@
             <div class="clear"></div>
         </div>
     </div><!--end: .additional-info-line -->
-    <?php include_once("footer.php"); ?>
+    <?php 
+    include_once("additional-info.php");
+    include_once("footer.php"); 
+    ?>
 
 </div>
 
