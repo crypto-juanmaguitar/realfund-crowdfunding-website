@@ -139,7 +139,7 @@
                                 <img src="images/ex/th-552x411-2.jpg" alt="th-292x204-1"> 
                             </a>
                             <div class="wrap-short-detail">
-                                <h3 class="rs acticle-title"><a class="be-fc-orange" href="project.html">Chalet en Cabo de Palos, Costa Cálida</a></h3>
+                                <h3 class="rs acticle-title"><a class="be-fc-orange" href="project.php">Chalet en Cabo de Palos, Costa Cálida</a></h3>
                                 <p class="rs tiny-desc">por <a href="profile.php" class="fw-b fc-gray be-fc-orange">Sun properties</a> en <span class="fw-b fc-gray">Cartagena, Región de Murcia</span></p>
                                 <p class="rs title-description">Promoción de obra nueva de un chalet unifamiliar en parcela aislada con una superficie construida de 558m².</p>
                             </div>
@@ -193,7 +193,7 @@
                                     <img src="images/ex/th-292x204-1.jpg" alt="$TITLE">
                                 </a>
                                 <div class="wrap-short-detail">
-                                    <h3 class="rs acticle-title"><a class="be-fc-orange" href="project.html">Chalets adosados</a></h3>
+                                    <h3 class="rs acticle-title"><a class="be-fc-orange" href="project.php">Chalets adosados</a></h3>
                                     <p class="rs tiny-desc">por <a href="profile.php" class="fw-b fc-gray be-fc-orange">I. Del Sureste</a></p>
                                     <p class="rs title-description">Gran oportunidad, muy cerca de la ciudad. Totalmente nuevos.</p>
                                     <p class="rs project-location">
@@ -236,7 +236,7 @@
                                     <img src="images/ex/th-192x135-1.jpg" alt="$TITLE">
                                 </a>
                                 <div class="wrap-short-detail">
-                                    <h3 class="rs acticle-title"><a class="be-fc-orange" href="project.html">Piso en Barcelona</a></h3>
+                                    <h3 class="rs acticle-title"><a class="be-fc-orange" href="project.php">Piso en Barcelona</a></h3>
                                     <p class="rs tiny-desc">por <a href="profile.php" class="fw-b fc-gray be-fc-orange">Particular</a></p>
                                     <p class="rs title-description">Totalmente amueblado. Reformado en el último año. Parquet. A 5 minutos de la Sagrada Familia.</p>
                                     <p class="rs project-location">
@@ -280,7 +280,7 @@
                                     <img src="images/ex/th-192x135-2.jpg" alt="$TITLE">
                                 </a>
                                 <div class="wrap-short-detail">
-                                    <h3 class="rs acticle-title"><a class="be-fc-orange" href="project.html">Casa rural</a></h3>
+                                    <h3 class="rs acticle-title"><a class="be-fc-orange" href="project.php">Casa rural</a></h3>
                                     <p class="rs tiny-desc">por <a href="profile.php" class="fw-b fc-gray be-fc-orange">Particular</a></p>
                                     <p class="rs title-description">Casa rural de grandes dimensiones, rodeada de una gran parcela.</p>
                                     <p class="rs project-location">
@@ -323,7 +323,7 @@
                                     <img src="images/ex/th-192x135-3.jpg" alt="$TITLE">
                                 </a>
                                 <div class="wrap-short-detail">
-                                    <h3 class="rs acticle-title"><a class="be-fc-orange" href="project.html">Casa de campo</a></h3>
+                                    <h3 class="rs acticle-title"><a class="be-fc-orange" href="project.php">Casa de campo</a></h3>
                                     <p class="rs tiny-desc">by <a href="profile.php" class="fw-b fc-gray be-fc-orange">Herederos</a></p>
                                     <p class="rs title-description">Perteneciente al Marqués de Miraflores, es una oportunidad única que no se puede dejar pasar.</p>
                                     <p class="rs project-location">

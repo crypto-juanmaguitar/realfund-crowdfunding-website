@@ -35,8 +35,8 @@
                 <div class="box-single-content">
                     <div class="editor-content">
                         <ul style="list-style: decimal">
-							<li><a target="_blank" href="index.html">Home</a></li>
-							<li><a target="_blank" href="project.html">Project</a></li>
+							<li><a target="_blank" href="index.php">Home</a></li>
+							<li><a target="_blank" href="project.php">Project</a></li>
 							<li><a target="_blank" href="search-results.php">Search result</a></li>
 							<li><a target="_blank" href="single.php">Single</a></li>
 							<li><a target="_blank" href="single-search-dropdown.php">Single dropdown search</a></li>

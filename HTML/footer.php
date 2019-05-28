@@ -52,7 +52,7 @@
         <div class="copyright">
             <div class="container_12">
                 <div class="grid_12">
-                    <a class="logo-footer" href="index.html"><img src="images/logo-2.png" alt="Real Fund"/></a>
+                    <a class="logo-footer" href="index.php"><img src="images/logo-2.png" alt="Real Fund"/></a>
                     <p class="rs term-privacy">
                         <a class="fw-b be-fc-orange" href="single.php">Términos y Condiciones</a>
                         <span class="sep">/</span>

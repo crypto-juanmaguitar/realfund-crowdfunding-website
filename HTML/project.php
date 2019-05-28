@@ -38,7 +38,7 @@
                 <div class="grid_12">
                     <nav class="top-menu">
                         <ul id="main-menu" class="nav nav-horizontal clearfix">
-                            <li class="active"><a href="index.html">Home</a></li>
+                            <li class="active"><a href="index.php">Home</a></li>
                             <li class="sep"></li>
                             <li><a href="all-pages.php">Todo el site</a></li>
                             <li class="sep"></li>
@@ -54,7 +54,7 @@
                         </a>
                         <div id="right-menu">
                             <ul class="alternate-menu">
-                                <li><a href="index.html">Home</a></li>
+                                <li><a href="index.php">Home</a></li>
                                 <li><a href="all-pages.php">Secciones</a></li>
                                 <li><a href="how-it-work.php">Ayuda</a></li>
                                 <li><a href="contact.php">Contacto</a></li>
@@ -90,7 +90,7 @@
                 </div>
                 <div class="header-left">
                     <h1 id="logo">
-                        <a href="index.html"><img src="images/logo.png" alt="Real Fund"/></a>
+                        <a href="index.php"><img src="images/logo.png" alt="Real Fund"/></a>
                     </h1>
                     <div class="main-nav clearfix">
                         <div class="nav-item">
@@ -549,7 +549,7 @@ A su vez, Sun Properties cuenta con acuerdos en vigor, tanto con fondos de inver
         <div class="copyright">
             <div class="container_12">
                 <div class="grid_12">
-                    <a class="logo-footer" href="index.html"><img src="images/logo-2.png" alt="Real Fund"/></a>
+                    <a class="logo-footer" href="index.php"><img src="images/logo-2.png" alt="Real Fund"/></a>
                     <p class="rs term-privacy">
                         <a class="fw-b be-fc-orange" href="single.php">Términos y Condiciones</a>
                         <span class="sep">/</span>
