@@ -38,7 +38,7 @@
                         <li><a class="be-fc-orange" href="#">Estadísticas</a></li>
                     </ul>
                     <ul class="rs">
-                        <li><a class="be-fc-orange" href="#">Staff Picks</a></li>
+                        <li><a class="be-fc-orange" href="#">Selecciones</a></li>
                         <li><a class="be-fc-orange" href="#">Popular</a></li>
                         <li><a class="be-fc-orange" href="#">Reciente</a></li>
                         <li><a class="be-fc-orange" href="#">Nuestras joyitas</a></li>
@@ -54,9 +54,9 @@
                 <div class="grid_12">
                     <a class="logo-footer" href="index.html"><img src="images/logo-2.png" alt="Real Fund"/></a>
                     <p class="rs term-privacy">
-                        <a class="fw-b be-fc-orange" href="single.html">Términos y Condiciones</a>
+                        <a class="fw-b be-fc-orange" href="single.php">Términos y Condiciones</a>
                         <span class="sep">/</span>
-                        <a class="fw-b be-fc-orange" href="single.html">Política de privacidad</a>
+                        <a class="fw-b be-fc-orange" href="single.php">Política de privacidad</a>
                         <span class="sep">/</span>
                         <a class="fw-b be-fc-orange" href="#">FAQ</a>
                     </p>

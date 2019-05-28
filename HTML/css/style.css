@@ -1082,7 +1082,7 @@ a.fc-gray-dark,.fc-gray-dark{color: #999}
     background: #53aa23;
 }
 .project-short .group-fee{
-    padding: 25px 0 0 50px;
+    padding: 25px 0 0 5px;
     float: left;
 }
 .project-short .group-fee .fee-item{
@@ -1244,7 +1244,7 @@ a.fc-gray-dark,.fc-gray-dark{color: #999}
     float: left;
     margin: 0;
     padding:6px 0 0 0;
-    width: 240px;
+    width: 200px;
 }
 #header .main-nav{
     float: left;
@@ -1271,7 +1271,7 @@ a.fc-gray-dark,.fc-gray-dark{color: #999}
     float: left;
     border-left: 1px dashed #d8dbdc;
     height: 21px;
-    margin: 9px 28px 0 28px;
+    margin: 9px 25px;
 }
 #header .account-panel{
     margin-left: 38px;

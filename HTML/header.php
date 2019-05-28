@@ -6,11 +6,11 @@
                         <ul id="main-menu" class="nav nav-horizontal clearfix">
                             <li class="active"><a href="index.html">Home</a></li>
                             <li class="sep"></li>
-                            <li><a href="all-pages.html">Todo el site</a></li>
+                            <li><a href="all-pages.php">Todo el site</a></li>
                             <li class="sep"></li>
-                            <li><a href="how-it-work.html">Ayuda</a></li>
+                            <li><a href="how-it-work.php">Ayuda</a></li>
                             <li class="sep"></li>
-                            <li><a href="contact.html">Contacto</a></li>
+                            <li><a href="contact.php">Contacto</a></li>
 
                         </ul>
                         <a id="btn-toogle-menu" class="btn-toogle-menu" href="#alternate-menu">
@@ -47,7 +47,7 @@
                     <div class="form-search">
                         <form action="#">
                             <label for="sys_txt_keyword">
-                                <input id="sys_txt_keyword" class="txt-keyword" type="text" placeholder="Search projects"/>
+                                <input id="sys_txt_keyword" class="txt-keyword" type="text" placeholder="Busca proyectos"/>
                             </label>
                             <button class="btn-search" type="reset"><i class="icon iMagnifier"></i></button>
                             <button class="btn-reset-keyword" type="reset"><i class="icon iXHover"></i></button>
