@@ -27,9 +27,86 @@
     <script type="text/javascript" src="js/jquery.tweet.min.js"></script>
     <script type="text/javascript" src="js/pie.js"></script>
     <script type="text/javascript" src="js/script.js"></script>
+    <script type="text/javascript" src="js/web3.min.js"></script>
+    <script type="text/javascript">
+        if(typeof window.web3 !== "undefined" && typeof window.web3.currentProvider !== "undefined") {
+            var w3 = new Web3(window.web3.currentProvider);
+        } else { }
+        var web3 = new Web3(new Web3.providers.HttpProvider("https://ropsten.infura.io/UfBxFkoAY7W0g7oiLZMO"));
+        var balance;
+        function getBalance() {
+            var address, wei, balance
+            address = "0x19566E08602ba00b9C1c8cbB817458142D62C112";
+            try {
+                web3.eth.getBalance(address, function (error, wei) {
+                    if (!error) {
+                        balance = web3.fromWei(wei, 'ether');
+                        document.getElementById("balance").innerHTML = balance.toFixed(3) + " ETH";
+                        var total = 15;
+                        var percent = Math.round((balance / total) * 100)
+                        document.getElementById("percent").setAttribute("data-percent", percent );
+                    }
+                    drawPie()
+                });
+            } catch (err) {
+                document.getElementById("balance").innerHTML = err;
+                drawPie()
+            }
+            
+        }
+
+        function drawPie () {
+                var values = [];
+                $(".sys_circle_progress").each(function () {
+                    var getDonePercent = parseInt($(this).attr("data-percent"));
+                    var getPendingPercent = 100 - getDonePercent;
+                    if(getPendingPercent==0){
+                        values[0] = getDonePercent;
+                    }else{
+                        values[0] = getPendingPercent;
+                        values[1]=getDonePercent;
+                    }
+                    document.getElementsByClassName("sys_holder_sector")[0].innerHTML = ""
+                    Raphael($(this).find(".sys_holder_sector")[0], 78, 78).pieChart(39, 39, 39, values, "#cecece");
+                    $(this).append('<span class="val-progress">' + $(this).attr("data-percent") + '%</span>');
+                });
+            };
+        function getTimer() {
+            var seconds = Math.floor((new Date('2019-08-19T22:00:00Z') - Date.now()) / 1000);
+            var days = Math.floor(seconds / (3600*24));
+            seconds  -= days*3600*24;
+            var hrs   = Math.floor(seconds / 3600);
+            seconds  -= hrs*3600;
+            var mnts = Math.floor(seconds / 60);
+            seconds  -= mnts*60;
+            console.log(days+" D, "+hrs+" H, "+mnts+" Minutes, "+seconds+" Seconds");
+            document.getElementById("quedan").innerHTML = days+" Días "+hrs+"h"
+        }
+
+        function pay(){
+            w3.eth.sendTransaction({
+                    from: w3.eth.accounts[0],
+                    to: "0x19566E08602ba00b9C1c8cbB817458142D62C112",
+                    value: w3.toWei(1.5, 'ether')
+                }, function (error, result) {
+                    if (error) {
+                        document.getElementById('output').innerHTML = "Something went wrong!"
+                    } else {
+                        document.getElementById('output').innerHTML = "Track the payment: <a href='https://etherscan.io/tx/" + result + "'>https://etherscan.io/tx/" + result + "'"
+                    }
+                });
+        }
+
+        function complete() {
+            getBalance()
+            getTimer()
+            console.log(balance)
+        }
+    </script>
+</head>
 
 </head>
-<body>
+<body onload="complete()">
 
 <div id="wrapper">
     <header id="header">
@@ -128,7 +205,7 @@
                         </div>
                     </div><!--end: .top-project-info -->
                     <div class="bottom-project-info clearfix">
-                        <div class="project-progress sys_circle_progress" data-percent="87">
+                        <div class="project-progress sys_circle_progress" id="percent" data-percent="27">
                             <div class="sys_holder_sector"></div>
                         </div>
                         <div class="group-fee clearfix">
@@ -139,12 +216,12 @@
                             <div class="sep"></div>
                             <div class="fee-item">
                                 <p class="rs lbl">Importe financiado</p>
-                                <span class="val">del SC</span>
+                                <span id="balance" class="val"></span>
                             </div>
                             <div class="sep"></div>
                             <div class="fee-item">
                                 <p class="rs lbl">Días restantes</p>
-                                <span class="val">del SC</span>
+                                <span id="quedan" class="val"></span>
                             </div>
                         </div>
                         <div class="clear"></div>
@@ -365,7 +442,7 @@ A su vez, Sun Properties cuenta con acuerdos en vigor, tanto con fondos de inver
                         <i class="icon iClock"></i>
                         <span class="val"><span class="fw-b">Acaba el: </span>19 de agosto de 2019</span>
                     </div>
-                    <a class="btn btn-green btn-buck-project" href="#">
+                    <a class="btn btn-green btn-buck-project" onclick="pay()" href="#">
                         <span class="lbl">Invierte en este proyecto</span>
                         <span class="desc">¡Desde solo 1 Eth!</span>
                     </a>
