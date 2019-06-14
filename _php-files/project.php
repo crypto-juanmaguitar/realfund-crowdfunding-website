@@ -642,6 +642,5 @@ A su vez, Sun Properties cuenta con acuerdos en vigor, tanto con fondos de inver
     </footer><!--end: #footer -->
 
 </div>
-<?php include_once("login-popup.php"); ?>
 </body>
 </html>
