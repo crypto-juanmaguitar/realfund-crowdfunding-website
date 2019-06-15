@@ -12,9 +12,13 @@ const IS_DEV = process.env.NODE_ENV === 'dev';
 const config = {
   mode: IS_DEV ? 'development' : 'production',
   devtool: IS_DEV ? 'eval' : 'source-map',
-  entry: './src/js/index.js',
+  entry: {
+    home: './src/js/home.js',
+    project: './src/js/project.js',
+    admin: './src/js/admin.js',
+  },
   output: {
-    filename: 'js/[name].[hash].js',
+    filename: 'js/__[name].[hash].js',
     path: path.resolve(__dirname, 'dist'),
   },
   module: {
@@ -97,6 +101,30 @@ const config = {
     new HtmlWebPackPlugin({
       template: path.resolve(__dirname, './src/index.html'),
       favicon: path.resolve(__dirname, './src/public/icon.ico'),
+      chunks: ['home'],
+      filename:'index.html',
+      minify: !IS_DEV && {
+        collapseWhitespace: true,
+        preserveLineBreaks: true,
+        removeComments: true,
+      },
+    }),
+    new HtmlWebPackPlugin({
+      template: path.resolve(__dirname, './src/project.html'),
+      favicon: path.resolve(__dirname, './src/public/icon.ico'),
+      chunks: ['project'],
+      filename:'project.html',
+      minify: !IS_DEV && {
+        collapseWhitespace: true,
+        preserveLineBreaks: true,
+        removeComments: true,
+      },
+    }),
+    new HtmlWebPackPlugin({
+      template: path.resolve(__dirname, './src/admin.html'),
+      favicon: path.resolve(__dirname, './src/public/icon.ico'),
+      chunks: ['admin'],
+      filename:'admin.html',
       minify: !IS_DEV && {
         collapseWhitespace: true,
         preserveLineBreaks: true,
