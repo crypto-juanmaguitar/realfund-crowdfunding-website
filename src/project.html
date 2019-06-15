@@ -111,7 +111,7 @@
       <div class="layout-2cols">
           <div class="content grid_8">
               <div class="project-detail">
-                  <h2 class="rs project-title">Chalet en Cabo de Palos, Costa Cálida.</h2>
+                  <h2 class="rfnd-title-project rs project-title">Chalet en Cabo de Palos, Costa Cálida.</h2>
                   <p class="rs post-by"><a href="#">Sun properties</a></p>
                   <div class="project-short big-thumb">
                       <div class="top-project-info">
@@ -128,23 +128,23 @@
                           </div>
                       </div><!--end: .top-project-info -->
                       <div class="bottom-project-info clearfix">
-                          <div class="project-progress sys_circle_progress" id="percent" data-percent="27">
+                          <div class="rfnd-percent-project project-progress sys_circle_progress" id="percent" data-percent="0">
                               <div class="sys_holder_sector"></div>
                           </div>
                           <div class="group-fee clearfix">
                               <div class="fee-item">
-                                  <p class="rs lbl">Inversores</p>
-                                  <span class="val">del SC</span>
+                                  <p class="rs lbl">Importe <br/> objetivo</p>
+                                  <span id="balance" class="rfnd-amount-goal-project val"></span>
                               </div>
                               <div class="sep"></div>
                               <div class="fee-item">
-                                  <p class="rs lbl">Importe financiado</p>
-                                  <span id="balance" class="val"></span>
+                                  <p class="rs lbl">Importe <br/>financiado</p>
+                                  <span id="balance" class="rfnd-amount-financed-project val"></span>
                               </div>
                               <div class="sep"></div>
                               <div class="fee-item">
-                                  <p class="rs lbl">Días restantes</p>
-                                  <span id="quedan" class="val"></span>
+                                  <p class="rs lbl">Tiempo <br/>restante</p>
+                                  <span id="quedan" class="rfnd-duetime-goal-project val"></span>
                               </div>
                           </div>
                           <div class="clear"></div>
@@ -162,9 +162,9 @@
                               <h3 class="rs alternate-tab accordion-label">El Proyecto</h3>
                               <div class="tab-pane active accordion-content">
                                   <div class="editor-content">
-                                      <h3 class="rs title-inside">Chalet en Cabo de Palos. 1.000 ETH</h3>
+                                      <h3 class="rfnd-title-project rs title-inside">Chalet en Cabo de Palos. 1.000 ETH</h3>
                                       <p class="rs post-by"><a href="#" class="fw-b fc-gray be-fc-orange">SUN PROPERTIES</a> en <span class="fw-b fc-gray">Cabo de Palos, Región de Murcia</span></p>
-                                      <p>Real Fund presenta una oportunidad única de inversión promovida por Sun Properties en el lindo pueblo marinero de Cabo de Palos, uno de los más conocidos de la Costa Cálida y situado junto a La Manga del Mar Menor.
+                                      <p class="rfnd-description-project">Real Fund presenta una oportunidad única de inversión promovida por Sun Properties en el lindo pueblo marinero de Cabo de Palos, uno de los más conocidos de la Costa Cálida y situado junto a La Manga del Mar Menor.
 
   El proyecto de Sun properties es una promoción de obra nueva de un chalet unifamiliar en parcela aislada con una superficie construida de 558m².8
 
@@ -357,15 +357,15 @@
           <div class="sidebar grid_4">
               <div class="project-runtime">
                   <div class="box-gray">
-                      <div class="project-date clearfix">
+                      <!-- <div class="project-date clearfix">
                           <i class="icon iCalendar"></i>
                           <span class="val"><span class="fw-b">Publicado: </span>19 de mayo de 2019</span>
-                      </div>
+                      </div> -->
                       <div class="project-date clearfix">
                           <i class="icon iClock"></i>
-                          <span class="val"><span class="fw-b">Acaba el: </span>19 de agosto de 2019</span>
+                          <span class="fw-b">Acaba en: </span><span class="rfnd-finalizes-project">19 de agosto de 2019</span>
                       </div>
-                      <a class="btn btn-green btn-buck-project" onclick="pay()" href="#">
+                      <a class="rfnd-contribute-project btn btn-green btn-buck-project"  href="#">
                           <span class="lbl">Invierte en este proyecto</span>
                           <span class="desc">¡Desde solo 1 Eth!</span>
                       </a>

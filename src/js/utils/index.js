@@ -3,12 +3,12 @@ import crowdfundingInstance from '../contracts/crowdfunding'
 import crowdfundingProject from '../contracts/project'
 import web3 from '../contracts/web3'
 
+window.REALFUND = window.REALFUND || {}
+
 const DAY = 3600 * 24
 
 export const getProjectsDetails = async projectAddress => {
   const projectInstance = crowdfundingProject(projectAddress)
-  console.log(projectInstance)
-  console.log(projectInstance.methods)
 
   const title = await projectInstance.methods.title().call()
   const description = await projectInstance.methods.description().call()
@@ -18,7 +18,13 @@ export const getProjectsDetails = async projectAddress => {
   const goalInEther = web3.utils.fromWei(goal.toString())
   const finishesAtInDays = finishesAt.toString()
 
-  return { title, description, goal: goalInEther, finishesAt: finishesAtInDays }
+  return {
+    address: projectAddress,
+    title,
+    description,
+    goal: goalInEther,
+    finishesAt: finishesAtInDays
+  }
 }
 
 export const getProjectsListInfo = async () => {
@@ -57,4 +63,29 @@ export const startProject = async ({
 
   const projectInfo = newProject.events.ProjectStarted.returnValues
   console.log({ newProject, projectInfo })
+}
+
+export const fundProject = async ({ projectAddress, amount }) => {
+  console.log({ projectAddress, amount })
+  const projectInstance = crowdfundingProject(projectAddress)
+  console.log(projectInstance.methods)
+  console.log(window.REALFUND.thisAccount)
+  const responseContribution = await projectInstance.methods.contribute().send({
+    from: window.REALFUND.thisAccount,
+    value: web3.utils.toWei(amount, 'ether')
+  })
+
+  console.log(responseContribution)
+
+  // const newTotal = parseInt(
+  //   responseContribution.events.FundingReceived.returnValues.currentTotal,
+  //   10
+  // )
+  // const projectGoal = parseInt(this.projectData[index].goalAmount, 10)
+  // this.projectData[index].currentAmount = newTotal
+  // this.projectData[index].isLoading = false
+  // // Set project state to success
+  // if (newTotal >= projectGoal) {
+  //   this.projectData[index].currentState = 2
+  // }
 }

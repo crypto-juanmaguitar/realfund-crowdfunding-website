@@ -1,4 +1,5 @@
 import web3 from './contracts/web3'
+import moment from 'moment'
 import jsrender from 'jsrender'
 import { getProjectsListInfo, startProject } from './utils/'
 import './common'
@@ -8,15 +9,16 @@ import '../scss/admin.scss'
 web3.eth
   .getAccounts()
   .then(([account]) => {
-    console.log(account)
     window.REALFUND.thisAccount = account
     return getProjectsListInfo()
   })
   .then(projectsList => {
-    console.log({ projectsList })
-
+    const projectsListTime = projectsList.map(project => {
+      project.dueTime = moment.unix(project.finishesAt).fromNow()
+      return project
+    })
     const projectTmpl = jsrender.templates('#projectTmpl')
-    const htmlListProjects = projectTmpl.render(projectsList)
+    const htmlListProjects = projectTmpl.render(projectsListTime)
     $('#list-projects').html(htmlListProjects)
   })
 
