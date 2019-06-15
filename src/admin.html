@@ -1,14 +1,16 @@
-
 <!DOCTYPE html>
 <html lang="">
   <head>
-    <meta charset="utf-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
     <title>Title Page</title>
 
     <!-- Bootstrap CSS -->
-    <link href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" rel="stylesheet">
+    <link
+      href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css"
+      rel="stylesheet"
+    />
 
     <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
     <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
@@ -18,10 +20,76 @@
     <![endif]-->
   </head>
   <body>
-    <h1 class="text-center">Hello World</h1>
+    <h1 class="text-center">Admin</h1>
+    <div class="container">
+      <div class="row">
+        <div class="col-md-6">
+            <h2 class="text-center">Create New Project</h2>
+          <form id="create-new-project">
+            <div class="form-group">
+              <label for="projectName">Project Name</label>
+              <input
+                type="text"
+                class="form-control"
+                id="projectName"
+                placeholder="Write a Project Name..."
+              />
+            </div>
+            <div class="form-group">
+              <label for="projectDescription">Project Description</label>
+              <textarea
+                class="form-control"
+                id="projectDescription"
+                rows="3"
+              ></textarea>
+            </div>
+            <div class="form-group">
+              <label for="projectDuration"
+                >Project Duration (in days from today)</label
+              >
+              <select class="form-control" id="projectDuration">
+                <option>1</option>
+                <option>2</option>
+                <option>3</option>
+                <option>4</option>
+                <option>5</option>
+              </select>
+            </div>
+            <div class="form-group">
+              <label for="projectGoal">Project Goal (in ETH)</label>
+              <select class="form-control" id="projectGoal">
+                <option>50</option>
+                <option>100</option>
+                <option>150</option>
+                <option>200</option>
+                <option>250</option>
+              </select>
+            </div>
+            <button>Create</button>
+          </form>
+        </div>
+        <div class="col-md-6">
+            <h2 class="text-center">List Projects</h2>
+            <div id="list-projects"></div>
+        </div>
+      </div>
+    </div>
+
+
+    <script id="projectTmpl" type="text/x-jsrender">
+      {{for}}
+      <div class="admin-project-item">
+        <h2>{{:title}}</h2>
+        <p>{{:description}}</p>
+        <p>Goal: {{:goal}} | Finishes At: {{:finishesAt}}</p>
+      </div>
+      {{/for}}
+    </script>
 
     <!-- jQuery -->
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jsrender/1.0.3/jsrender.min.js"></script>
+
     <!-- Bootstrap JavaScript -->
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
   </body>

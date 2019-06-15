@@ -15,26 +15,26 @@ const config = {
   entry: {
     home: './src/js/home.js',
     project: './src/js/project.js',
-    admin: './src/js/admin.js',
+    admin: './src/js/admin.js'
   },
   output: {
     filename: 'js/__[name].[hash].js',
-    path: path.resolve(__dirname, 'dist'),
+    path: path.resolve(__dirname, 'dist')
   },
   module: {
     rules: [
       {
         test: /\.js$/,
         exclude: /node_modules/,
-        loader: 'babel-loader',
+        loader: 'babel-loader'
       },
       {
         test: /\.scss$/,
         use: [
           IS_DEV ? 'style-loader' : MiniCssExtractPlugin.loader,
           'css-loader',
-          'sass-loader',
-        ],
+          'sass-loader'
+        ]
       },
       {
         test: /\.(gif|png|jpe?g|svg)$/i,
@@ -45,8 +45,8 @@ const config = {
               limit: 8192,
               name: '[name].[ext]',
               fallback: 'file-loader',
-              outputPath: 'public/images',
-            },
+              outputPath: 'public/images'
+            }
           },
           {
             loader: 'image-webpack-loader',
@@ -54,22 +54,22 @@ const config = {
               mozjpeg: {
                 mozjpeg: {
                   progressive: true,
-                  quality: 65,
+                  quality: 65
                 },
                 pngquant: {
                   quality: '65-90',
-                  speed: 4,
+                  speed: 4
                 },
                 gifsicle: {
-                  interlaced: false,
+                  interlaced: false
                 },
                 webp: {
-                  quality: 75,
-                },
-              },
-            },
-          },
-        ],
+                  quality: 75
+                }
+              }
+            }
+          }
+        ]
       },
       {
         test: /\.html$/,
@@ -78,71 +78,71 @@ const config = {
             loader: 'html-loader',
             options: {
               attrs: [':data-src'],
-              minimize: true,
-            },
-          },
-        ],
-      },
-    ],
+              minimize: true
+            }
+          }
+        ]
+      }
+    ]
   },
   plugins: [
     new CleanWebpackPlugin(),
     new webpack.ProvidePlugin({
       $: 'jquery',
       jQuery: 'jquery',
-      'windows.jQuery': 'jquery',
+      'windows.jQuery': 'jquery'
     }),
     new CopyWebpackPlugin([
       {
         from: './src/public',
-        to: 'public',
-      },
+        to: 'public'
+      }
     ]),
     new HtmlWebPackPlugin({
       template: path.resolve(__dirname, './src/index.html'),
       favicon: path.resolve(__dirname, './src/public/icon.ico'),
       chunks: ['home'],
-      filename:'index.html',
+      inject: 'body',
+      filename: 'index.html',
       minify: !IS_DEV && {
         collapseWhitespace: true,
         preserveLineBreaks: true,
-        removeComments: true,
-      },
+        removeComments: true
+      }
     }),
     new HtmlWebPackPlugin({
       template: path.resolve(__dirname, './src/project.html'),
       favicon: path.resolve(__dirname, './src/public/icon.ico'),
       chunks: ['project'],
-      filename:'project.html',
+      inject: 'body',
+      filename: 'project.html',
       minify: !IS_DEV && {
         collapseWhitespace: true,
         preserveLineBreaks: true,
-        removeComments: true,
-      },
+        removeComments: true
+      }
     }),
     new HtmlWebPackPlugin({
       template: path.resolve(__dirname, './src/admin.html'),
       favicon: path.resolve(__dirname, './src/public/icon.ico'),
       chunks: ['admin'],
-      filename:'admin.html',
+      inject: 'body',
+      filename: 'admin.html',
       minify: !IS_DEV && {
         collapseWhitespace: true,
         preserveLineBreaks: true,
-        removeComments: true,
-      },
+        removeComments: true
+      }
     }),
     new MiniCssExtractPlugin({
       filename: IS_DEV ? 'css/[name].css' : 'css/[name].[contenthash].css',
-      chunkFilename: 'css/[id].css',
+      chunkFilename: 'css/[id].css'
     }),
     new webpack.HashedModuleIdsPlugin(),
-    new PreloadWebpackPlugin({
-      include: 'initial',
-    }),
-    new CssUrlRelativePlugin(),
+    new CssUrlRelativePlugin()
   ],
   devServer: {
-    contentBase: path.join(__dirname, 'src'),
+    contentBase: path.join(__dirname, 'src')
   },
   optimization: {
     runtimeChunk: 'single',
@@ -153,12 +153,12 @@ const config = {
           chunks: 'initial',
           name: 'vendor',
           priority: 10,
-          enforce: true,
-        },
-      },
+          enforce: true
+        }
+      }
     },
-    minimizer: [],
-  },
+    minimizer: []
+  }
 };
 
 if (!IS_DEV) {

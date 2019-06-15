@@ -1,1 +1,2 @@
-console.log('project');
+import './common'
+console.log('project')

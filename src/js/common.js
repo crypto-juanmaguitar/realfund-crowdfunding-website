@@ -1,0 +1,1 @@
+window.REALFUND = window.REALFUND || {}
