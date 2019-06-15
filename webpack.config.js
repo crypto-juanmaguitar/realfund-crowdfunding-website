@@ -1,13 +1,13 @@
-const path = require('path');
-const webpack = require('webpack');
-const HtmlWebPackPlugin = require('html-webpack-plugin');
-const { CleanWebpackPlugin } = require('clean-webpack-plugin');
-const CopyWebpackPlugin = require('copy-webpack-plugin');
-const MiniCssExtractPlugin = require('mini-css-extract-plugin');
-const PreloadWebpackPlugin = require('preload-webpack-plugin');
-const CssUrlRelativePlugin = require('css-url-relative-plugin');
-
-const IS_DEV = process.env.NODE_ENV === 'dev';
+const path = require('path')
+const webpack = require('webpack')
+const HtmlWebPackPlugin = require('html-webpack-plugin')
+const { CleanWebpackPlugin } = require('clean-webpack-plugin')
+const CopyWebpackPlugin = require('copy-webpack-plugin')
+const MiniCssExtractPlugin = require('mini-css-extract-plugin')
+const PreloadWebpackPlugin = require('preload-webpack-plugin')
+const CssUrlRelativePlugin = require('css-url-relative-plugin')
+const CopyPlugin = require('copy-webpack-plugin')
+const IS_DEV = process.env.NODE_ENV === 'dev'
 
 const config = {
   mode: IS_DEV ? 'development' : 'production',
@@ -139,7 +139,12 @@ const config = {
       chunkFilename: 'css/[id].css'
     }),
     new webpack.HashedModuleIdsPlugin(),
-    new CssUrlRelativePlugin()
+    new CssUrlRelativePlugin(),
+    new CopyPlugin([
+      { from: 'src/images', to: 'images' },
+      { from: 'src/js/libs', to: 'js/libs' },
+      { from: 'src/css', to: 'css' }
+    ])
   ],
   devServer: {
     contentBase: path.join(__dirname, 'src')
@@ -159,16 +164,16 @@ const config = {
     },
     minimizer: []
   }
-};
+}
 
 if (!IS_DEV) {
-  const TerserPlugin = require('terser-webpack-plugin');
-  const OptimizeCSSAssetsPlugin = require('optimize-css-assets-webpack-plugin');
+  const TerserPlugin = require('terser-webpack-plugin')
+  const OptimizeCSSAssetsPlugin = require('optimize-css-assets-webpack-plugin')
 
   config.optimization.minimizer.push(
     new TerserPlugin(),
     new OptimizeCSSAssetsPlugin({})
-  );
+  )
 }
 
-module.exports = config;
+module.exports = config
