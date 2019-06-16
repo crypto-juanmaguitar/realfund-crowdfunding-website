@@ -35,6 +35,11 @@ export function drawPie () {
       '<span class="val-progress">' + $(this).attr('data-percent') + '%</span>'
     )
 
+    $('.rfnd-highlighted-project-image').on('load', function () {
+      $('#pluswrap').addClass('hidden')
+    })
+
+
     $('#pluswrap').addClass('hidden')
   })
 }
