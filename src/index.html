@@ -26,7 +26,10 @@
       type="text/javascript"
       src="js/libs/jquery-migrate-1.2.1.min.js"
     ></script>
-    <script type="text/javascript" src="js/libs/jquery.touchwipe.min.js"></script>
+    <script
+      type="text/javascript"
+      src="js/libs/jquery.touchwipe.min.js"
+    ></script>
     <script type="text/javascript" src="js/libs/md_slider.min.js"></script>
     <script type="text/javascript" src="js/libs/jquery.sidr.min.js"></script>
     <script type="text/javascript" src="js/libs/jquery.tweet.min.js"></script>
@@ -44,11 +47,11 @@
                 <ul id="main-menu" class="nav nav-horizontal clearfix">
                   <li class="active"><a href="index.html">Home</a></li>
                   <li class="sep"></li>
-                  <li><a href="all-pages.php">Todo el site</a></li>
+                  <li><a href="#">Todo el site</a></li>
                   <li class="sep"></li>
-                  <li><a href="how-it-work.php">Ayuda</a></li>
+                  <li><a href="#">Ayuda</a></li>
                   <li class="sep"></li>
-                  <li><a href="contact.php">Contacto</a></li>
+                  <li><a href="#">Contacto</a></li>
                 </ul>
                 <a
                   id="btn-toogle-menu"
@@ -62,9 +65,9 @@
                 <div id="right-menu">
                   <ul class="alternate-menu">
                     <li><a href="index.html">Home</a></li>
-                    <li><a href="all-pages.php">Secciones</a></li>
-                    <li><a href="how-it-work.php">Ayuda</a></li>
-                    <li><a href="contact.php">Contacto</a></li>
+                    <li><a href="#">Secciones</a></li>
+                    <li><a href="#">Ayuda</a></li>
+                    <li><a href="#">Contacto</a></li>
                   </ul>
                 </div>
               </nav>
@@ -183,7 +186,7 @@
                   </li>
                 </ul>
                 <p class="rs view-all-category">
-                  <a href="category.php" class="be-fc-orange"
+                  <a href="#" class="be-fc-orange"
                     >+ Ver todas las categorías</a
                   >
                 </p>
@@ -195,31 +198,32 @@
           <div class="grid_8 marked-category">
             <div class="wrap-title clearfix">
               <h2 class="title-mark rs">
-                Proyecto destacado: <span class="fc-orange">Costa</span>
+                Proyecto destacado
+                <!-- : <span class="fc-orange">Costa</span> -->
               </h2>
-              <a href="category.php" class="count-project be-fc-orange"
+              <!-- <a href="#" class="count-project be-fc-orange"
                 >Ver los <span class="fw-b">24</span> proyectos en la costa</a
-              >
+              > -->
             </div>
-            <div class="box-marked-project project-short">
+            <div id="rfnd-highlighted-project" class="box-marked-project project-short">
               <div class="top-project-info">
                 <div class="content-info-short clearfix">
-                  <a href="#" class="thumb-img">
-                    <img src="images/ex/th-552x411-2.jpg" alt="th-292x204-1" />
+                  <a class="rfnd-highlighted-project-link" href="#" class="thumb-img">
+                    <img class="rfnd-highlighted-project-image" src="images/ex/th-552x411-2.jpg" alt="th-292x204-1" />
                   </a>
                   <div class="wrap-short-detail">
                     <h3 class="rs acticle-title">
-                      <a class="be-fc-orange" href="project.html"
+                      <a class="rfnd-highlighted-project-link rfnd-highlighted-project-title be-fc-orange" href="#"
                         >Chalet en Cabo de Palos, Costa Cálida</a
                       >
                     </h3>
                     <p class="rs tiny-desc">
                       por
-                      <a href="profile.php" class="fw-b fc-gray be-fc-orange"
+                      <a href="#" class="rfnd-highlighted-project-link rfnd-highlighted-project-promotor fw-b fc-gray be-fc-orange"
                         >Sun properties</a
                       >
                       en
-                      <span class="fw-b fc-gray"
+                      <span class="rfnd-highlighted-project-city fw-b fc-gray"
                         >Cartagena, Región de Murcia</span
                       >
                     </p>
@@ -238,7 +242,7 @@
               <!--end: .top-project-info -->
               <div class="bottom-project-info clearfix">
                 <div
-                  class="project-progress sys_circle_progress"
+                  class="rfnd-highlighted-project-percent project-progress sys_circle_progress"
                   data-percent="76"
                 >
                   <div class="sys_holder_sector"></div>
@@ -246,17 +250,17 @@
                 <div class="group-fee clearfix">
                   <div class="fee-item">
                     <p class="rs lbl">Inversores</p>
-                    <span class="val">270</span>
+                    <span class="rfnd-highlighted-project-investors val">270</span>
                   </div>
                   <div class="sep"></div>
                   <div class="fee-item">
                     <p class="rs lbl">Financiado</p>
-                    <span class="val">$38,000</span>
+                    <span class="rfnd-highlighted-project-funded val">$38,000</span>
                   </div>
                   <div class="sep"></div>
                   <div class="fee-item">
                     <p class="rs lbl">Quedan</p>
-                    <span class="val">25 días</span>
+                    <span class="rfnd-highlighted-project-time val">25 días</span>
                   </div>
                 </div>
                 <div class="clear"></div>
@@ -272,11 +276,11 @@
         <div class="container_12">
           <div class="grid_12 wrap-title">
             <h2 class="common-title">Popular</h2>
-            <a class="be-fc-orange" href="category.php">Ver todo</a>
+            <!-- <a class="be-fc-orange" href="#">Ver todo</a> -->
           </div>
           <div class="clear"></div>
-          <div class="lst-popular-project clearfix">
-            <div class="grid_3">
+          <div id="list_projects_home" class="lst-popular-project clearfix">
+            <!-- <div class="grid_3">
               <div class="project-short sml-thumb">
                 <div class="top-project-info">
                   <div class="content-info-short clearfix">
@@ -331,7 +335,6 @@
                 </div>
               </div>
             </div>
-            <!--end: .grid_3 > .project-short-->
             <div class="grid_3">
               <div class="project-short sml-thumb">
                 <div class="top-project-info">
@@ -387,7 +390,6 @@
                 </div>
               </div>
             </div>
-            <!--end: .grid_3 > .project-short-->
             <div class="clear clear-2col"></div>
             <div class="grid_3">
               <div class="project-short sml-thumb">
@@ -444,7 +446,6 @@
                 </div>
               </div>
             </div>
-            <!--end: .grid_3 > .project-short-->
             <div class="grid_3">
               <div class="project-short sml-thumb">
                 <div class="top-project-info">
@@ -499,8 +500,7 @@
                   </div>
                 </div>
               </div>
-            </div>
-            <!--end: .grid_3 > .project-short-->
+            </div> -->
           </div>
         </div>
       </div>
@@ -591,7 +591,7 @@
             </p>
           </div>
           <div class="grid_3 ta-r">
-            <a class="btn bigger btn-red" href="#">Saber más</a>
+            <a class="btn bigger btn-red" target="_blank" href="http://realfund.rocks">Saber más</a>
           </div>
           <div class="clear"></div>
         </div>
@@ -617,9 +617,7 @@
             <p class="rs">+34 647734684</p>
           </div>
           <!--end: .contact-info -->
-          <div class="grid_3 recent-tweets">
-
-          </div>
+          <div class="grid_3 recent-tweets"></div>
           <!--end: .recent-tweets -->
           <div class="clear clear-2col"></div>
           <div class="grid_3 email-newsletter">
@@ -648,25 +646,25 @@
             <h3 class="rs title">Descubre &amp; Crea</h3>
             <div class="footer-menu">
               <ul class="rs">
-                <li><a class="be-fc-orange" href="#">Qué es Real Fund</a></li>
+                <li><a class="be-fc-orange" target="_blank" href="http://realfund.rocks">Qué es Real Fund</a></li>
                 <li>
-                  <a class="be-fc-orange" href="#">¿Tienes un proyecto?</a>
+                  <a class="be-fc-orange" target="_blank" href="http://realfund.rocks">¿Tienes un proyecto?</a>
                 </li>
                 <li>
-                  <a class="be-fc-orange" href="#"
+                  <a class="be-fc-orange" target="_blank" href="http://realfund.rocks"
                     >Líneas maestras del proyecto</a
                   >
                 </li>
-                <li><a class="be-fc-orange" href="#">Prensa</a></li>
-                <li><a class="be-fc-orange" href="#">Estadísticas</a></li>
+                <li><a class="be-fc-orange" target="_blank" href="http://realfund.rocks">Prensa</a></li>
+                <li><a class="be-fc-orange" target="_blank" href="http://realfund.rocks">Estadísticas</a></li>
               </ul>
               <ul class="rs">
-                <li><a class="be-fc-orange" href="#">Selecciones</a></li>
-                <li><a class="be-fc-orange" href="#">Popular</a></li>
-                <li><a class="be-fc-orange" href="#">Reciente</a></li>
-                <li><a class="be-fc-orange" href="#">Nuestras joyitas</a></li>
+                <li><a class="be-fc-orange" target="_blank" href="http://realfund.rocks">Selecciones</a></li>
+                <li><a class="be-fc-orange" target="_blank" href="http://realfund.rocks">Popular</a></li>
+                <li><a class="be-fc-orange" target="_blank" href="http://realfund.rocks">Reciente</a></li>
+                <li><a class="be-fc-orange" target="_blank" href="http://realfund.rocks">Nuestras joyitas</a></li>
                 <li>
-                  <a class="be-fc-orange" href="#">Los más financiados</a>
+                  <a class="be-fc-orange" target="_blank" href="http://realfund.rocks">Los más financiados</a>
                 </li>
               </ul>
               <div class="clear"></div>
@@ -677,25 +675,22 @@
         <div class="copyright">
           <div class="container_12">
             <div class="grid_12">
-              <a class="logo-footer" href="index.html"
+              <a class="logo-footer" target="_blank" href="http://realfund.rocks"
                 ><img src="images/logo-2.png" alt="Real Fund"
               /></a>
               <p class="rs term-privacy">
-                <a class="fw-b be-fc-orange" href="single.php"
+                <a class="fw-b be-fc-orange" target="_blank" href="http://realfund.rocks"
                   >Términos y Condiciones</a
                 >
                 <span class="sep">/</span>
-                <a class="fw-b be-fc-orange" href="single.php"
+                <a class="fw-b be-fc-orange" target="_blank" href="http://realfund.rocks"
                   >Política de privacidad</a
                 >
                 <span class="sep">/</span>
-                <a class="fw-b be-fc-orange" href="#">FAQ</a>
+                <a class="fw-b be-fc-orange" target="_blank" href="http://realfund.rocks">FAQ</a>
               </p>
               <p class="rs ta-c fc-gray-dark site-copyright">
-                <a
-                  href="realfund.rocks"
-                  title="Real Fund"
-                  target="_blank"
+                <a target="_blank" href="http://realfund.rocks" title="Real Fund"
                   >Real Fund © 2019</a
                 >.
               </p>
@@ -707,5 +702,78 @@
       <!--end: #footer -->
       <!-- @end footer -->
     </div>
+
+    <div id="pluswrap">
+        <div class="plus">
+          Loading...
+        </div>
+      </div>
+
+    <script id="projectsListTmpl" type="text/x-jsrender">
+        {{for}}
+            <div class="grid_3">
+                <div class="project-short sml-thumb">
+                  <div class="top-project-info">
+                    <div class="content-info-short clearfix">
+                      <a href="project.html?address={{:address}}" class="thumb-img">
+                        <img src="{{:image}}" alt="image house" />
+                      </a>
+                      <div class="wrap-short-detail">
+                        <h3 class="rs acticle-title">
+                          <a class="be-fc-orange" href="project.html?address={{:address}}"
+                            >{{:title}}</a
+                          >
+                        </h3>
+                        <p class="rs tiny-desc">
+                          por
+                          <a href="profile.php" class="fw-b fc-gray be-fc-orange"
+                            >{{:promotor}}</a
+                          >
+                        </p>
+                        <p class="rs title-description">
+                          {{:description}}
+                        </p>
+                        <p class="rs project-location">
+                          <i class="icon iLocation"></i>
+                          {{:city}}
+                        </p>
+                      </div>
+                    </div>
+                  </div>
+                  <div class="bottom-project-info clearfix">
+                      <span class="val">{{:percent}} %</span>
+                    <div class="line-progress">
+                      <div class="bg-progress">
+                        <span style="width: {{:percent}}%"></span>
+                      </div>
+                    </div>
+                    <div class="group-fee clearfix">
+                      <div class="fee-item">
+                        <p class="rs lbl">Objetivo</p>
+                        <span class="val">{{:goal}} ETH</span>
+                      </div>
+                      <div class="sep"></div>
+                      <div class="fee-item">
+                        <p class="rs lbl">Financiado</p>
+                        <span class="val">{{:balanceInEther}} ETH</span>
+                      </div>
+
+                    </div>
+                  </div>
+
+                  <!--- -->
+                  <div class="bottom-project-info clearfix">
+                    <div class="group-fee clearfix">
+                      <div class="fee-item">
+                        <p class="rs lbl">Queda</p>
+                        <span class="val">{{:finalizesIn}}</span>
+                      </div>
+                    </div>
+                  </div>
+                  <!--- -->
+                </div>
+              </div>
+          {{/for}}
+    </script>
   </body>
 </html>

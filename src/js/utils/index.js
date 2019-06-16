@@ -2,6 +2,9 @@
 import crowdfundingInstance from '../contracts/crowdfunding'
 import crowdfundingProject from '../contracts/project'
 import web3 from '../contracts/web3'
+import moment from 'moment'
+
+import { projectsConfig } from '../config'
 
 window.REALFUND = window.REALFUND || {}
 
@@ -18,12 +21,23 @@ export const getProjectsDetails = async projectAddress => {
   const goalInEther = web3.utils.fromWei(goal.toString())
   const finishesAtInDays = finishesAt.toString()
 
+  const balance = await web3.eth.getBalance(projectAddress)
+  const balanceInEther = web3.utils.fromWei(balance.toString())
+
+  const finalizesIn = moment.unix(finishesAt).fromNow()
+
+  const percent = (goalInEther * balanceInEther) / 100
+
   return {
     address: projectAddress,
     title,
     description,
     goal: goalInEther,
-    finishesAt: finishesAtInDays
+    finishesAt: finishesAtInDays,
+    balanceInEther,
+    finalizesIn,
+    percent,
+    ...projectsConfig[projectAddress]
   }
 }
 
