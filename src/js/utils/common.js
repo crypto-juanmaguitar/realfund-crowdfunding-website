@@ -20,11 +20,9 @@ export function drawPie () {
     console.log({ getDonePercent, getPendingPercent })
     if (getPendingPercent == 0) {
       values[0] = getDonePercent
-    }
-    else if (getPendingPercent == 100) {
+    } else if (getPendingPercent == 100) {
       values[0] = getDonePercent
-    }
-    else {
+    } else {
       console.log('sdsds')
       values[0] = getPendingPercent
       values[1] = getDonePercent
@@ -36,5 +34,7 @@ export function drawPie () {
     $(this).append(
       '<span class="val-progress">' + $(this).attr('data-percent') + '%</span>'
     )
+
+    $('#pluswrap').addClass('hidden')
   })
 }

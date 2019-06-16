@@ -8,7 +8,6 @@ import { drawPie } from './utils/common'
 import '../scss/home.scss'
 
 console.log('Home!')
-
 ;(async function () {
   const [account] = await web3.eth.getAccounts()
   console.log(account)
@@ -16,14 +15,33 @@ console.log('Home!')
   const projects = await getProjectsListInfo()
   console.log(projects)
 
+  $('#list_projects_home img').on('load', function () {
+    $('#pluswrap').addClass('hidden')
+  })
+
   const projectsListTmpl = jsrender.templates('#projectsListTmpl')
   const htmlListProjects = projectsListTmpl.render(projects)
   $('#list_projects_home').html(htmlListProjects)
 
   const highlightedProject = projects[0]
-  const { address, title, image, promotor, city, description, goal, finalizesIn, percent, balanceInEther } = highlightedProject
+  const {
+    address,
+    title,
+    image,
+    promotor,
+    city,
+    description,
+    goal,
+    finalizesIn,
+    percent,
+    balanceInEther
+  } = highlightedProject
 
-  $('.rfnd-highlighted-project-link').attr('href', `project.html?address=${address}`)
+  $('.rfnd-highlighted-project-link').attr(
+    'href',
+    `project.html?address=${address}`
+  )
+
   $('.rfnd-highlighted-project-image').attr('src', image)
   $('.rfnd-highlighted-project-title').html(title)
   $('.rfnd-highlighted-project-promotor').html(promotor)
@@ -34,8 +52,4 @@ console.log('Home!')
   $('.rfnd-highlighted-project-funded').html(`${balanceInEther} ETH`)
 
   drawPie()
-
-  $('#pluswrap').addClass('hidden')
-
 })()
-
