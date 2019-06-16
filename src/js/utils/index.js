@@ -28,6 +28,15 @@ export const getProjectsDetails = async projectAddress => {
 
   const percent = (goalInEther * balanceInEther) / 100
 
+  // const projectsAddresses = await crowdfundingInstance.methods
+  //   .getProjects()
+  //   .call()
+
+  // console.log({ projectsAddresses })
+
+  // const contributors = await projectInstance.methods.getContributors().call()
+  // console.log({ contributors })
+
   return {
     address: projectAddress,
     title,
