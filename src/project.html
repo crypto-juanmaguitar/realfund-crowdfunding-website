@@ -371,10 +371,27 @@
                           <i class="icon iClock"></i>
                           <span class="fw-b">Acaba en: </span><span class="rfnd-finalizes-project">19 de agosto de 2019</span>
                       </div>
-                      <a class="rfnd-contribute-project btn btn-green btn-buck-project"  href="#">
-                          <span class="lbl">Invierte en este proyecto</span>
-                          <span class="desc">¡Desde solo 1 Eth!</span>
-                      </a>
+                      <form class="rfnd-contribute-project">
+                        <div class="amount">
+                          <input value="2" type="number" min=1 max=100> ETH
+                        </div>
+                        <button class="btn btn-green btn-buck-project"  href="#">
+                            <span class="lbl">Invierte en este proyecto</span>
+                            <span class="desc">¡Desde solo 1 Eth!</span>
+                        </button>
+                      </form>
+                      <form class="rfnd-refund-project hidden">
+                        <button class="btn btn-green btn-buck-project"  href="#">
+                            <span class="lbl">Recibe tu aportación al proyecto</span>
+                            <span class="desc">Ya el objetivo no se consiguió</span>
+                        </button>
+                      </form>
+                      <form class="rfnd-tokens-project hidden">
+                        <button class="btn btn-green btn-buck-project"  href="#">
+                            <span class="lbl">Recibe tus token</span>
+                            <span class="desc">Ya el objetivo se consiguió!</span>
+                        </button>
+                      </form>
                       <p class="rs description">Este proyecto sólo será financiado si se consigue el capital necesario antes del 19 de Agosto, 2:05pm CEST.</p>
                   </div>
               </div><!--end: .project-runtime -->

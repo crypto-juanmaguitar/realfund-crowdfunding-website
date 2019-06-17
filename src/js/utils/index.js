@@ -18,10 +18,12 @@ export const getProjectsDetails = async projectAddress => {
   const goal = await projectInstance.methods.goal().call()
   const finishesAt = await projectInstance.methods.finishesAt().call()
   const closedAt = await projectInstance.methods.closedAt().call()
+  //const openedAt = await projectInstance.methods.openedAt().call()
 
   const goalInEther = web3.utils.fromWei(goal.toString())
   const finishesAtTimestamp = finishesAt.toString()
   const closedAtTimestamp = closedAt.toString()
+  //const openedAtTimestamp = openedAt.toString()
 
   const balance = await web3.eth.getBalance(projectAddress)
   const balanceInEther = web3.utils.fromWei(balance.toString())

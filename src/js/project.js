@@ -1,5 +1,5 @@
-import './common'
 import web3 from './contracts/web3'
+import './common'
 
 import { getProjectsDetails, fundProject } from './utils/'
 import { getUrlVars, drawPie } from './utils/common'
@@ -42,11 +42,11 @@ web3.eth.getAccounts().then(([account]) => {
   $('#pluswrap').addClass('hidden')
 })()
 
-$('.rfnd-contribute-project').on('click', async function (e) {
-  console.log('click button')
-  console.log({ address })
+$('.rfnd-contribute-project').on('submit', async function (e) {
+  e.preventDefault()
+  const amount = $(this).find('input').val()
   await fundProject({
     projectAddress: address,
-    amount: '2'
+    amount
   })
 })
