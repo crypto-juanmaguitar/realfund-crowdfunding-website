@@ -1,5 +1,5 @@
 export const projectsConfig = {
-  '0xd8245238392cAB9c2F3F5B51243C3D2e304ed75e': {
+  '0x27796FB8C29aaEf46EfbF04b01c4c7c1BA48856e': {
     image: '/images/ex/th-292x204-1.jpg',
     city: 'Barcelona',
     promotor: 'Sun properties'
