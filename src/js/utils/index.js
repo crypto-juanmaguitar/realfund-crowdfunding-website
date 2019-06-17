@@ -17,14 +17,21 @@ export const getProjectsDetails = async projectAddress => {
   const description = await projectInstance.methods.description().call()
   const goal = await projectInstance.methods.goal().call()
   const finishesAt = await projectInstance.methods.finishesAt().call()
+  const closedAt = await projectInstance.methods.closedAt().call()
 
   const goalInEther = web3.utils.fromWei(goal.toString())
-  const finishesAtInDays = finishesAt.toString()
+  const finishesAtTimestamp = finishesAt.toString()
+  const closedAtTimestamp = closedAt.toString()
 
   const balance = await web3.eth.getBalance(projectAddress)
   const balanceInEther = web3.utils.fromWei(balance.toString())
 
-  const finalizesIn = moment.unix(finishesAt).fromNow()
+  const finalizesIn = moment.unix(finishesAtTimestamp).fromNow()
+
+  const closedAgo = moment.unix(closedAtTimestamp).fromNow()
+  const isClosed = moment.unix(closedAtTimestamp).isBefore(+new Date())
+  console.log({ closedAtTimestamp, closedAgo, isClosed })
+
 
   const percent = (goalInEther * balanceInEther) / 100
 
@@ -42,9 +49,11 @@ export const getProjectsDetails = async projectAddress => {
     title,
     description,
     goal: goalInEther,
-    finishesAt: finishesAtInDays,
+    finishesAt: finishesAtTimestamp,
     balanceInEther,
     finalizesIn,
+    closedAgo,
+    isClosed,
     percent,
     ...projectsConfig[projectAddress]
   }
