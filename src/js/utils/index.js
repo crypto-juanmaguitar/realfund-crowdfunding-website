@@ -42,7 +42,8 @@ export const getProjectsDetails = async projectAddress => {
     isClosed
   })
 
-  const percent = (goalInEther * balanceInEther) / 100
+
+  const percent = Math.round((balanceInEther * 100) / goalInEther)
 
   // const projectsAddresses = await crowdfundingInstance.methods
   //   .getProjects()
@@ -57,6 +58,20 @@ export const getProjectsDetails = async projectAddress => {
   if (!configPerPropject.image) {
     configPerPropject.image = '/images/ex/th-292x204-1.jpg'
   }
+
+  console.log({
+    address: projectAddress,
+    title,
+    description,
+    goal: goalInEther,
+    finishesAt: finishesAtTimestamp,
+    balanceInEther,
+    finalizesIn,
+    closedAgo,
+    isClosed,
+    percent,
+    ...configPerPropject
+  })
 
   return {
     address: projectAddress,
