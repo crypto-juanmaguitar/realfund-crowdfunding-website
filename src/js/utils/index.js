@@ -5,6 +5,7 @@ import web3 from '../contracts/web3'
 import moment from 'moment'
 
 import { projectsConfig } from '../config'
+moment.locale('es')
 
 window.REALFUND = window.REALFUND || {}
 
@@ -18,22 +19,28 @@ export const getProjectsDetails = async projectAddress => {
   const goal = await projectInstance.methods.goal().call()
   const finishesAt = await projectInstance.methods.finishesAt().call()
   const closedAt = await projectInstance.methods.closedAt().call()
-  //const openedAt = await projectInstance.methods.openedAt().call()
+  // const openedAt = await projectInstance.methods.openedAt().call()
 
   const goalInEther = web3.utils.fromWei(goal.toString())
   const finishesAtTimestamp = finishesAt.toString()
   const closedAtTimestamp = closedAt.toString()
-  //const openedAtTimestamp = openedAt.toString()
+  // const openedAtTimestamp = openedAt.toString()
 
   const balance = await web3.eth.getBalance(projectAddress)
   const balanceInEther = web3.utils.fromWei(balance.toString())
 
   const finalizesIn = moment.unix(finishesAtTimestamp).fromNow()
-
   const closedAgo = moment.unix(closedAtTimestamp).fromNow()
-  const isClosed = moment.unix(closedAtTimestamp).isBefore(+new Date())
-  console.log({ closedAtTimestamp, closedAgo, isClosed })
+  // const openedAtMoment = moment.unix(openedAtTimestamp).fromNow()
 
+  const isClosed = moment.unix(closedAtTimestamp).isBefore(+new Date())
+  console.log({
+    // openedAtTimestamp,
+    closedAtTimestamp,
+    closedAgo,
+    // openedAtMoment,
+    isClosed
+  })
 
   const percent = (goalInEther * balanceInEther) / 100
 
@@ -46,6 +53,11 @@ export const getProjectsDetails = async projectAddress => {
   // const contributors = await projectInstance.methods.getContributors().call()
   // console.log({ contributors })
 
+  const configPerPropject = projectsConfig[projectAddress] || {}
+  if (!configPerPropject.image) {
+    configPerPropject.image = '/images/ex/th-292x204-1.jpg'
+  }
+
   return {
     address: projectAddress,
     title,
@@ -57,7 +69,7 @@ export const getProjectsDetails = async projectAddress => {
     closedAgo,
     isClosed,
     percent,
-    ...projectsConfig[projectAddress]
+    ...configPerPropject
   }
 }
 
@@ -97,6 +109,16 @@ export const startProject = async ({
 
   const projectInfo = newProject.events.ProjectStarted.returnValues
   console.log({ newProject, projectInfo })
+}
+
+export const getRefundProject = async ({ projectAddress }) => {
+  const projectInstance = crowdfundingProject(projectAddress)
+  console.log(window.REALFUND.thisAccount)
+  const responseRefund = await projectInstance.methods.getRefund().send({
+    from: window.REALFUND.thisAccount
+  })
+
+  console.log(responseRefund)
 }
 
 export const fundProject = async ({ projectAddress, amount }) => {

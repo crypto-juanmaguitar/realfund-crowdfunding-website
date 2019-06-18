@@ -4,7 +4,7 @@ export const projectsConfig = {
     city: 'Barcelona',
     promotor: 'Sun properties'
   },
-  '0x5F5bBDB4bbC9db5810e460a6654AaEa2a532d814': {
+  '0x90D388524486e58B632C480273A5cCC25ecD2680': {
     image: '/images/ex/th-192x135-2.jpg',
     city: 'Alicante',
     promotor: 'Sun properties'

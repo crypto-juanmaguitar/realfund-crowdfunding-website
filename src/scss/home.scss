@@ -16,3 +16,39 @@
 .hidden {
   display: none !important;
 }
+
+/* mixin for multiline */
+.block-with-text {
+  overflow: hidden;
+  position: relative;
+  line-height: 1.2em;
+  max-height: 6em;
+  text-align: justify;
+  margin-right: -1em;
+  padding-right: 1.6em;
+}
+.block-with-text:before {
+  content: '...';
+  position: absolute;
+  right: 11px;
+    bottom: 2px;
+}
+.block-with-text:after {
+  content: '';
+  position: absolute;
+  right: 0;
+  width: 1em;
+  height: 1em;
+  margin-top: 0.2em;
+  background: white;
+}
+
+
+.truncate {
+  width: 100%;
+  white-space: nowrap;
+  overflow: hidden;
+  display: inline-block;
+  text-overflow: ellipsis;
+  margin: 0;
+}

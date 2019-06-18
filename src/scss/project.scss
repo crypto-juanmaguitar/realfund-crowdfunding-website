@@ -18,12 +18,27 @@
   display: none !important;
 }
 
-.alert {
+.message-top {
   padding: 20px;
-  background-color: #f44336; /* Red */
-  color: white;
   margin-bottom: 15px;
-  font-size: 1.4em;
+  font-size: 2em;
+  text-align: center;
+  background-color: #000; /* Red */
+  color: white;
+  p {
+    margin: 0;
+  }
+  &.alert {
+    background-color: red; /* Red */
+  }
+  &.progress {
+    background-color: blue; /* Red */
+  }
+  &.success {
+    background-color: green; /* Red */
+  }
+
+
 }
 
 .rfnd-contribute-project {
