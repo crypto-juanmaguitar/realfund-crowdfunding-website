@@ -5,6 +5,7 @@ import web3 from '../contracts/web3'
 import moment from 'moment'
 
 import { projectsConfig } from '../config'
+import { handleError } from '../helpers'
 moment.locale('es')
 
 window.REALFUND = window.REALFUND || {}
@@ -15,16 +16,38 @@ export const getProjectsDetails = async projectAddress => {
   console.log(projectAddress)
   const projectInstance = crowdfundingProject(projectAddress)
   console.log(projectInstance)
-  const title = await projectInstance.methods.title().call()
-  const description = await projectInstance.methods.description().call()
-  const goal = await projectInstance.methods.goal().call()
-  const finishesAt = await projectInstance.methods.finishesAt().call()
-  const closedAt = await projectInstance.methods.closedAt().call()
+
+  const title = await projectInstance.methods
+    .title()
+    .call()
+    .catch(handleError('title()'))
+
+  const description = await projectInstance.methods
+    .description()
+    .call()
+    .catch(handleError('description()'))
+
+  const goal = await projectInstance.methods
+    .goal()
+    .call()
+    .catch(handleError('goal()'))
+
+  const finishesAt = await projectInstance.methods
+    .finishesAt()
+    .call()
+    .catch(handleError('finishesAt()'))
+
+  const closedAt = await projectInstance.methods
+    .closedAt()
+    .call()
+    .catch(handleError('closedAt()'))
   // const openedAt = await projectInstance.methods.openedAt().call()
 
-
-  const contributors = await projectInstance.methods.getContributors().call()
-  console.log(contributors)
+  const contributors = await projectInstance.methods
+    .getContributors()
+    .call()
+    .catch(handleError('getContributors()'))
+  console.log({ contributors })
 
   const goalInEther = web3.utils.fromWei(goal.toString())
   const finishesAtTimestamp = finishesAt.toString()
@@ -46,7 +69,6 @@ export const getProjectsDetails = async projectAddress => {
     // openedAtMoment,
     isClosed
   })
-
 
   const percent = Math.round((balanceInEther * 100) / goalInEther)
 
