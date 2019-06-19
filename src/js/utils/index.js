@@ -12,14 +12,21 @@ window.REALFUND = window.REALFUND || {}
 const DAY = 3600 * 24
 
 export const getProjectsDetails = async projectAddress => {
+  console.log(projectAddress)
   const projectInstance = crowdfundingProject(projectAddress)
-
+  console.log(projectInstance)
   const title = await projectInstance.methods.title().call()
   const description = await projectInstance.methods.description().call()
   const goal = await projectInstance.methods.goal().call()
   const finishesAt = await projectInstance.methods.finishesAt().call()
   const closedAt = await projectInstance.methods.closedAt().call()
   // const openedAt = await projectInstance.methods.openedAt().call()
+
+
+  const contributors = await projectInstance.methods.getContributors().call({
+    gasLimit: web3.utils.toHex( 1000000 )
+  })
+  console.log(contributors)
 
   const goalInEther = web3.utils.fromWei(goal.toString())
   const finishesAtTimestamp = finishesAt.toString()
