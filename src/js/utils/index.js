@@ -23,9 +23,7 @@ export const getProjectsDetails = async projectAddress => {
   // const openedAt = await projectInstance.methods.openedAt().call()
 
 
-  const contributors = await projectInstance.methods.getContributors().call({
-    gasLimit: web3.utils.toHex( 1000000 )
-  })
+  const contributors = await projectInstance.methods.getContributors().call()
   console.log(contributors)
 
   const goalInEther = web3.utils.fromWei(goal.toString())
