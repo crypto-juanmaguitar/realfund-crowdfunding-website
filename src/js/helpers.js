@@ -3,3 +3,5 @@ export const handleError = method => e => {
   console.log(e)
   console.log('---')
 }
+
+export const updateInterface = () => { window.location.reload() }

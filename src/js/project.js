@@ -1,7 +1,13 @@
 import web3 from './contracts/web3'
 import './common'
 
-import { getProjectsDetails, fundProject, getRefundProject } from './utils/'
+import {
+  getProjectsDetails,
+  fundProject,
+  getRefundProject,
+  withdrawFundsProject,
+  getTokensProject
+} from './utils/'
 import { getUrlVars, drawPie, countDown } from './utils/common'
 
 import '../scss/project.scss'
@@ -9,25 +15,21 @@ import '../scss/project.scss'
 let { address } = getUrlVars()
 address = address.replace(/\#/g, '')
 console.log({ address })
-
-web3.eth.getAccounts().then((accounts) => {
-
-  console.log(accounts)
-  const [account] = accounts
-  console.log(account)
-  window.REALFUND.thisAccount = account
-})
 ;(async function () {
   const {
     title,
     description,
     goal,
     finishesAt,
+    closedAt,
     finalizesIn,
     closedAgo,
     isClosed,
     percent,
-    balanceInEther
+    creator,
+    contributors,
+    balanceInEther,
+    currentUserContributionInEhter
   } = await getProjectsDetails(address)
 
   console.log({ closedAgo, isClosed })
@@ -38,6 +40,7 @@ web3.eth.getAccounts().then((accounts) => {
   $('.rfnd-amount-financed-project').html(`${balanceInEther} ETH`)
   $('.rfnd-amount-goal-project').html(`${goal} ETH`)
   $('.rfnd-duetime-goal-project').html(finalizesIn)
+  $('.rfnd-contributors-project').text(contributors.length)
 
   $('.rfnd-percent-project').attr('data-percent', percent)
 
@@ -47,22 +50,53 @@ web3.eth.getAccounts().then((accounts) => {
   const $projectStatusBarMessage = $projectStatusBar.find('.message-top')
 
   if (new Date() > new Date(finishesAt * 1000)) {
-    if (balanceInEther < goal) {
-      $projectStatusBarMessage
-        .addClass('alert')
-        .text(
-          `🙁 El proyecto ha expirado y no consiguió financiar su objetivo de ${goal} ETH`
-        )
+    if (closedAt == 0) {
+      let text = `🙁 El proyecto ha expirado y no consiguió financiar su objetivo de ${goal} ETH`
+      if (
+        currentUserContributionInEhter &&
+        +currentUserContributionInEhter !== 0
+      ) {
+        text += `<p class="note"><strong>Habias invertido ${currentUserContributionInEhter} ETH</strong> de este proyecto por lo que puedes solicitar la devolución de tu aportación</p>`
+      }
+      $projectStatusBarMessage.addClass('alert').html(text)
+
+      $('.rfnd-refund-amount-project').text(
+        `${currentUserContributionInEhter} ETH`
+      )
 
       $('.rfnd-contribute-project').addClass('hidden')
       $('.rfnd-contribute-project-description').addClass('hidden')
-      $('.rfnd-refund-project').removeClass('hidden')
+      if (
+        currentUserContributionInEhter &&
+        +currentUserContributionInEhter !== 0
+      ) {
+        $('.rfnd-refund-project').removeClass('hidden')
+      }
     } else {
-      $projectStatusBarMessage
-        .addClass('success')
-        .text(
-          `🎉 El proyecto terminó con exito! Se consiguió financiar su objetivo de ${goal} ETH`
-        )
+      let text = `<p>🎉 El proyecto terminó con exito! Se consiguió financiar su objetivo de ${goal} ETH</p>`
+      if (window.REALFUND.thisAccount === creator) {
+        text += `<p class="note"><strong>Eres el creador</strong> de este proyecto</p>`
+      }
+      if (currentUserContributionInEhter) {
+        text += `<p class="note"><strong>Has invertido ${currentUserContributionInEhter} ETH</strong> de este proyecto. Puedes retirar tus tokens STP</p>`
+      }
+
+      if (balanceInEther != 0) {
+        text += `<p class="note">Puedes retirar el dinero financiado (${balanceInEther} ETH)</p>`
+      }
+      $projectStatusBarMessage.addClass('success').html(text)
+
+      $('.rfnd-withdraw-amount-project').text(`${balanceInEther} ETH`)
+
+      $('.rfnd-contribute-project').addClass('hidden')
+      $('.rfnd-contribute-project-description').addClass('hidden')
+      if (balanceInEther != 0) {
+        $('.rfnd-withdraw-project').removeClass('hidden')
+      }
+      if (currentUserContributionInEhter) {
+        $('.rfnd-tokens-project').removeClass('hidden')
+      }
+
     }
   } else {
     $projectStatusBarMessage
@@ -91,6 +125,20 @@ $('.rfnd-contribute-project').on('submit', async function (e) {
 $('.rfnd-refund-project').on('submit', async function (e) {
   e.preventDefault()
   await getRefundProject({
+    projectAddress: address
+  })
+})
+
+$('.rfnd-withdraw-project').on('submit', async function (e) {
+  e.preventDefault()
+  await withdrawFundsProject({
+    projectAddress: address
+  })
+})
+
+$('.rfnd-tokens-project').on('submit', async function (e) {
+  e.preventDefault()
+  await getTokensProject({
     projectAddress: address
   })
 })

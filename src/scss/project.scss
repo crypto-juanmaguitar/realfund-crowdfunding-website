@@ -18,6 +18,10 @@
   display: none !important;
 }
 
+.btn-buck-project {
+  color: white;
+}
+
 .message-top {
   padding: 20px;
   margin-bottom: 15px;
@@ -27,6 +31,10 @@
   color: white;
   p {
     margin: 0;
+  }
+  .note {
+    font-size: .8em;
+    margin-top: 20px;
   }
   &.alert {
     background-color: red; /* Red */

@@ -9,9 +9,6 @@ import '../scss/home.scss'
 
 console.log('Home!')
 ;(async function () {
-  const [account] = await web3.eth.getAccounts()
-  console.log(account)
-  window.REALFUND.thisAccount = account
   const projects = await getProjectsListInfo()
   console.log(projects)
 
@@ -27,6 +24,7 @@ console.log('Home!')
     $('#list_projects_home').html(htmlListProjects)
 
     const highlightedProject = projects[0]
+    console.log({highlightedProject})
     const {
       address,
       title,
@@ -34,6 +32,7 @@ console.log('Home!')
       promotor,
       city,
       description,
+      contributors,
       goal,
       finalizesIn,
       percent,
@@ -47,8 +46,10 @@ console.log('Home!')
 
     $('.rfnd-highlighted-project-image').attr('src', image)
     $('.rfnd-highlighted-project-title').html(title)
+    $('.rfnd-highlighted-project-description').html(description)
     $('.rfnd-highlighted-project-promotor').html(promotor)
     $('.rfnd-highlighted-project-city').html(city)
+    $('.rfnd-highlighted-project-investors').text(contributors.length)
 
     $('.rfnd-highlighted-project-percent').attr('data-percent', percent)
     $('.rfnd-highlighted-project-time').html(finalizesIn)

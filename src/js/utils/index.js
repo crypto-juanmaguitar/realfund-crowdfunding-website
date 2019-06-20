@@ -22,6 +22,11 @@ export const getProjectsDetails = async projectAddress => {
     .call()
     .catch(handleError('title()'))
 
+  const creator = await projectInstance.methods
+    .creator()
+    .call()
+    .catch(handleError('creator()'))
+
   const description = await projectInstance.methods
     .description()
     .call()
@@ -49,6 +54,12 @@ export const getProjectsDetails = async projectAddress => {
     .catch(handleError('getContributors()'))
   console.log({ contributors })
 
+  const currentUserContribution = await projectInstance.methods
+    .contributions(window.REALFUND.thisAccount)
+    .call()
+    .catch(handleError('currentUserContribution'))
+
+  const currentUserContributionInEhter = web3.utils.fromWei(currentUserContribution.toString())
   const goalInEther = web3.utils.fromWei(goal.toString())
   const finishesAtTimestamp = finishesAt.toString()
   const closedAtTimestamp = closedAt.toString()
@@ -62,13 +73,13 @@ export const getProjectsDetails = async projectAddress => {
   // const openedAtMoment = moment.unix(openedAtTimestamp).fromNow()
 
   const isClosed = moment.unix(closedAtTimestamp).isBefore(+new Date())
-  console.log({
-    // openedAtTimestamp,
-    closedAtTimestamp,
-    closedAgo,
-    // openedAtMoment,
-    isClosed
-  })
+  // console.log({
+  //   // openedAtTimestamp,
+  //   closedAtTimestamp,
+  //   closedAgo,
+  //   // openedAtMoment,
+  //   isClosed
+  // })
 
   const percent = Math.round((balanceInEther * 100) / goalInEther)
 
@@ -92,11 +103,15 @@ export const getProjectsDetails = async projectAddress => {
     description,
     goal: goalInEther,
     finishesAt: finishesAtTimestamp,
+    closedAt: closedAtTimestamp,
     balanceInEther,
     finalizesIn,
     closedAgo,
     isClosed,
     percent,
+    creator,
+    contributors,
+    currentUserContributionInEhter,
     ...configPerPropject
   })
 
@@ -106,11 +121,15 @@ export const getProjectsDetails = async projectAddress => {
     description,
     goal: goalInEther,
     finishesAt: finishesAtTimestamp,
+    closedAt: closedAtTimestamp,
     balanceInEther,
     finalizesIn,
     closedAgo,
     isClosed,
     percent,
+    creator,
+    currentUserContributionInEhter,
+    contributors: contributors || [],
     ...configPerPropject
   }
 }
@@ -157,6 +176,24 @@ export const getRefundProject = async ({ projectAddress }) => {
   const projectInstance = crowdfundingProject(projectAddress)
   console.log(window.REALFUND.thisAccount)
   const responseRefund = await projectInstance.methods.getRefund().send({
+    from: window.REALFUND.thisAccount
+  })
+
+  console.log(responseRefund)
+}
+
+export const getTokensProject = async ({ projectAddress }) => {
+  const projectInstance = crowdfundingProject(projectAddress)
+  console.log(window.REALFUND.thisAccount)
+  const responseRefund = await projectInstance.methods.getTokens(window.REALFUND.thisAccount).send()
+
+  console.log(responseRefund)
+}
+
+export const withdrawFundsProject = async ({ projectAddress }) => {
+  const projectInstance = crowdfundingProject(projectAddress)
+  console.log(window.REALFUND.thisAccount)
+  const responseRefund = await projectInstance.methods.withdrawFunds().send({
     from: window.REALFUND.thisAccount
   })
 

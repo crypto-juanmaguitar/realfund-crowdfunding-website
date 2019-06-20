@@ -6,12 +6,7 @@ import './common'
 
 import '../scss/admin.scss'
 
-web3.eth
-  .getAccounts()
-  .then(([account]) => {
-    window.REALFUND.thisAccount = account
-    return getProjectsListInfo()
-  })
+getProjectsListInfo()
   .then(projectsList => {
     const projectsListTime = projectsList.map(project => {
       project.dueTime = moment.unix(project.finishesAt).fromNow()
