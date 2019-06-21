@@ -49,54 +49,48 @@ console.log({ address })
   const $projectStatusBar = $('#rfnd-status-project')
   const $projectStatusBarMessage = $projectStatusBar.find('.message-top')
 
-  if (new Date() > new Date(finishesAt * 1000)) {
-    if (closedAt == 0) {
-      let text = `🙁 El proyecto ha expirado y no consiguió financiar su objetivo de ${goal} ETH`
-      if (
-        currentUserContributionInEhter &&
-        +currentUserContributionInEhter !== 0
-      ) {
-        text += `<p class="note"><strong>Habias invertido ${currentUserContributionInEhter} ETH</strong> de este proyecto por lo que puedes solicitar la devolución de tu aportación</p>`
-      }
-      $projectStatusBarMessage.addClass('alert').html(text)
-
-      $('.rfnd-refund-amount-project').text(
-        `${currentUserContributionInEhter} ETH`
-      )
-
-      $('.rfnd-contribute-project').addClass('hidden')
-      $('.rfnd-contribute-project-description').addClass('hidden')
-      if (
-        currentUserContributionInEhter &&
-        +currentUserContributionInEhter !== 0
-      ) {
-        $('.rfnd-refund-project').removeClass('hidden')
-      }
-    } else {
-      let text = `<p>🎉 El proyecto terminó con exito! Se consiguió financiar su objetivo de ${goal} ETH</p>`
-      if (window.REALFUND.thisAccount === creator) {
-        text += `<p class="note"><strong>Eres el creador</strong> de este proyecto</p>`
-      }
-      if (currentUserContributionInEhter) {
-        text += `<p class="note"><strong>Has invertido ${currentUserContributionInEhter} ETH</strong> de este proyecto. Puedes retirar tus tokens STP</p>`
-      }
-
-      if (balanceInEther != 0) {
+  if (closedAt != 0) {
+    let text = `<p>🎉 El proyecto terminó con exito! Se consiguió financiar su objetivo de ${goal} ETH</p>`
+    if (window.REALFUND.thisAccount === creator) {
+      text += `<p class="note"><strong>Eres el creador</strong> de este proyecto</p>`
+      if (+balanceInEther !== 0) {
         text += `<p class="note">Puedes retirar el dinero financiado (${balanceInEther} ETH)</p>`
-      }
-      $projectStatusBarMessage.addClass('success').html(text)
-
-      $('.rfnd-withdraw-amount-project').text(`${balanceInEther} ETH`)
-
-      $('.rfnd-contribute-project').addClass('hidden')
-      $('.rfnd-contribute-project-description').addClass('hidden')
-      if (balanceInEther != 0) {
         $('.rfnd-withdraw-project').removeClass('hidden')
       }
-      if (currentUserContributionInEhter) {
-        $('.rfnd-tokens-project').removeClass('hidden')
-      }
+    }
+    if (+currentUserContributionInEhter) {
+      text += `<p class="note"><strong>Has invertido ${currentUserContributionInEhter} ETH</strong> de este proyecto. Puedes retirar tus tokens STP</p>`
+      $('.rfnd-tokens-project').removeClass('hidden')
+    }
 
+    $projectStatusBarMessage.addClass('success').html(text)
+
+    $('.rfnd-withdraw-amount-project').text(`${balanceInEther} ETH`)
+
+    $('.rfnd-contribute-project').addClass('hidden')
+    $('.rfnd-contribute-project-description').addClass('hidden')
+
+  } else if (new Date() > new Date(finishesAt * 1000) ) {
+    let text = `🙁 El proyecto ha expirado y no consiguió financiar su objetivo de ${goal} ETH`
+    if (
+      currentUserContributionInEhter &&
+      +currentUserContributionInEhter !== 0
+    ) {
+      text += `<p class="note"><strong>Habias invertido ${currentUserContributionInEhter} ETH</strong> de este proyecto por lo que puedes solicitar la devolución de tu aportación</p>`
+    }
+    $projectStatusBarMessage.addClass('alert').html(text)
+
+    $('.rfnd-refund-amount-project').text(
+      `${currentUserContributionInEhter} ETH`
+    )
+
+    $('.rfnd-contribute-project').addClass('hidden')
+    $('.rfnd-contribute-project-description').addClass('hidden')
+    if (
+      currentUserContributionInEhter &&
+      +currentUserContributionInEhter !== 0
+    ) {
+      $('.rfnd-refund-project').removeClass('hidden')
     }
   } else {
     $projectStatusBarMessage

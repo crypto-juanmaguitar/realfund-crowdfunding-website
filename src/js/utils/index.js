@@ -1,6 +1,8 @@
 // We import our the scripts for the smart contract instantiation, and web3
 import crowdfundingInstance from '../contracts/crowdfunding'
 import crowdfundingProject from '../contracts/project'
+import crowdfundingTokenSTP from '../contracts/tokenSTP'
+
 import web3 from '../contracts/web3'
 import moment from 'moment'
 
@@ -52,14 +54,20 @@ export const getProjectsDetails = async projectAddress => {
     .getContributors()
     .call()
     .catch(handleError('getContributors()'))
-  console.log({ contributors })
 
   const currentUserContribution = await projectInstance.methods
     .contributions(window.REALFUND.thisAccount)
     .call()
     .catch(handleError('currentUserContribution'))
 
-  const currentUserContributionInEhter = web3.utils.fromWei(currentUserContribution.toString())
+  const currentUserTokensContribution = await projectInstance.methods
+    .tokensDistribution(window.REALFUND.thisAccount)
+    .call()
+    .catch(handleError('currentUserTokensContribution'))
+
+  const currentUserContributionInEhter = web3.utils.fromWei(
+    currentUserContribution.toString()
+  )
   const goalInEther = web3.utils.fromWei(goal.toString())
   const finishesAtTimestamp = finishesAt.toString()
   const closedAtTimestamp = closedAt.toString()
@@ -67,6 +75,11 @@ export const getProjectsDetails = async projectAddress => {
 
   const balance = await web3.eth.getBalance(projectAddress)
   const balanceInEther = web3.utils.fromWei(balance.toString())
+
+  const balanceTokens = await crowdfundingTokenSTP.methods
+    .balanceOf(window.REALFUND.thisAccount)
+    .call()
+    .catch(handleError('crowdfundingTokenSTP.methods.balanceOf'))
 
   const finalizesIn = moment.unix(finishesAtTimestamp).fromNow()
   const closedAgo = moment.unix(closedAtTimestamp).fromNow()
@@ -111,7 +124,9 @@ export const getProjectsDetails = async projectAddress => {
     percent,
     creator,
     contributors,
+    balanceTokens: balanceTokens.toString(),
     currentUserContributionInEhter,
+    currentUserTokensContribution: currentUserTokensContribution.toString(),
     ...configPerPropject
   })
 
@@ -128,8 +143,10 @@ export const getProjectsDetails = async projectAddress => {
     isClosed,
     percent,
     creator,
+    balanceTokens: balanceTokens.toString(),
     currentUserContributionInEhter,
     contributors: contributors || [],
+    currentUserTokensContribution: currentUserTokensContribution.toString(),
     ...configPerPropject
   }
 }
@@ -185,8 +202,12 @@ export const getRefundProject = async ({ projectAddress }) => {
 export const getTokensProject = async ({ projectAddress }) => {
   const projectInstance = crowdfundingProject(projectAddress)
   console.log(window.REALFUND.thisAccount)
-  const responseRefund = await projectInstance.methods.getTokens(window.REALFUND.thisAccount).send()
-
+  const responseRefund = await projectInstance.methods
+    .getTokens()
+    .send({
+      from: window.REALFUND.thisAccount
+    })
+    .catch(handleError('projectInstance.methods.getTokens'))
   console.log(responseRefund)
 }
 
