@@ -74,7 +74,7 @@ export const getProjectsDetails = async projectAddress => {
   // const openedAtTimestamp = openedAt.toString()
 
   const balance = await web3.eth.getBalance(projectAddress)
-  const balanceInEther = web3.utils.fromWei(balance.toString())
+  let balanceInEther = web3.utils.fromWei(balance.toString())
 
   const balanceTokens = await crowdfundingTokenSTP.methods
     .balanceOf(window.REALFUND.thisAccount)
@@ -85,7 +85,7 @@ export const getProjectsDetails = async projectAddress => {
   const closedAgo = moment.unix(closedAtTimestamp).fromNow()
   // const openedAtMoment = moment.unix(openedAtTimestamp).fromNow()
 
-  const isClosed = moment.unix(closedAtTimestamp).isBefore(+new Date())
+  const isClosed = closedAtTimestamp === '0' ? false : moment.unix(closedAtTimestamp).isBefore(+new Date())
   // console.log({
   //   // openedAtTimestamp,
   //   closedAtTimestamp,
@@ -94,7 +94,11 @@ export const getProjectsDetails = async projectAddress => {
   //   isClosed
   // })
 
-  const percent = Math.round((balanceInEther * 100) / goalInEther)
+  const percent = isClosed ? 100 : Math.round((balanceInEther * 100) / goalInEther)
+
+  if (isClosed) {
+    balanceInEther = goalInEther
+  }
 
   // const projectsAddresses = await crowdfundingInstance.methods
   //   .getProjects()
